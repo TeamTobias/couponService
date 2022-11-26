@@ -44,7 +44,7 @@ public class Coupon {
     /*쿠폰 타입*/
     @Column(nullable = false)
     @Enumerated(EnumType.STRING)
-    private Type tpye;
+    private Type type;
 
     /*쿠폰 할인 금액*/
     private int discountAmount;
