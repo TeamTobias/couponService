@@ -11,8 +11,10 @@ import java.util.Date;
 @Entity
 @Getter
 @Setter
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @ToString
-@RequiredArgsConstructor
 @Table(name = "brandcoupon")
 public class BrandCoupon {
 
@@ -24,7 +26,7 @@ public class BrandCoupon {
 
     /*브랜드 id*/
     @Column(name = "brandid", nullable = false)
-    private Long brandId;
+    private String brandId;
 
     /*쿠폰 인가 상태*/ /*TODO: - 설계도 도메인 모델 수정하기*/
     @Enumerated(EnumType.STRING)
@@ -53,7 +55,7 @@ public class BrandCoupon {
     private Date closeDate;
 
     /*쿠폰 생성일*/
-    @Column(name = "createdat", nullable = false)
+    @Column(name = "createdat")
     @CreatedDate
     private Date createdAt;
 
