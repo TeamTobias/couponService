@@ -3,6 +3,7 @@ package com.tobias.couponservice.inner.repository;
 import com.tobias.couponservice.inner.domain.BrandCouponPermitStatus;
 import com.tobias.couponservice.inner.domain.CouponType;
 import com.tobias.couponservice.inner.domain.entity.BrandCoupon;
+import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,7 +43,6 @@ public class BrandCouponRepositoryTests {
 
             brandCouponRepository.save(brandCoupon);
         });
-
 
 
     }
