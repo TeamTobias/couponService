@@ -1,21 +1,19 @@
 package com.tobias.couponservice.inner.service;
 
-import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Service;
+import com.tobias.couponservice.inner.domain.aggregate.CouponItem;
+import com.tobias.couponservice.outer.dto.MyCouponDto;
 
-@Service
-@RequiredArgsConstructor
-public class MyCouponService {
+import java.util.List;
 
-    private final MyCouponRepository myCouponRepository;
+public interface MyCouponService {
 
+    /*내 쿠폰 등록*/
+    void saveMyCoupon(MyCouponDto myCouponDto);
 
-    /*1. 내 쿠폰 등록*/
-    public void registerCoupon() {
+    /*내 쿠폰 조회*/
+    List<CouponItem> findMyCoupon(String userid);
 
-
-    }
-
-
+    /*내 쿠폰 사용*/
+    void useMyCoupon(String userid, Long couponItemId);
 
 }

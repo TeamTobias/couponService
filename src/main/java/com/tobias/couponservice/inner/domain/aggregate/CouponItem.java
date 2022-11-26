@@ -1,6 +1,6 @@
 package com.tobias.couponservice.inner.domain.aggregate;
 
-import com.tobias.couponservice.inner.domain.CouponItemStatus;
+import com.tobias.couponservice.inner.domain.standardType.CouponItemStatus;
 import com.tobias.couponservice.inner.domain.entity.Coupon;
 import lombok.*;
 

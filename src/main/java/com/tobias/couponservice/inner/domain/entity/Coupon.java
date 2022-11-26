@@ -1,8 +1,8 @@
 package com.tobias.couponservice.inner.domain.entity;
 
-import com.tobias.couponservice.inner.domain.PermitStatus;
-import com.tobias.couponservice.inner.domain.PublisherType;
-import com.tobias.couponservice.inner.domain.Type;
+import com.tobias.couponservice.inner.domain.standardType.PermitStatus;
+import com.tobias.couponservice.inner.domain.standardType.PublisherType;
+import com.tobias.couponservice.inner.domain.standardType.Type;
 import lombok.*;
 import org.springframework.data.annotation.CreatedDate;
 
@@ -45,6 +45,9 @@ public class Coupon {
     @Column(nullable = false)
     @Enumerated(EnumType.STRING)
     private Type tpye;
+
+    /*쿠폰 할인 금액*/
+    private int discountAmount;
 
     /*쿠폰 적용 가능 금액*/
     @Column(nullable = false)

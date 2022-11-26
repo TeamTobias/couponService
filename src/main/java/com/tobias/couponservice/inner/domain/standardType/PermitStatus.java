@@ -1,4 +1,4 @@
-package com.tobias.couponservice.inner.domain;
+package com.tobias.couponservice.inner.domain.standardType;
 
 public enum PermitStatus {
     PERMIT, // 허가됨
