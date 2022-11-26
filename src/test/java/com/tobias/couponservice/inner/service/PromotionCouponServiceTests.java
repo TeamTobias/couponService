@@ -1,8 +1,6 @@
 package com.tobias.couponservice.inner.service;
 
-import com.tobias.couponservice.inner.domain.entity.Coupon;
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.annotation.Description;
 import org.springframework.context.annotation.Profile;
@@ -19,7 +17,7 @@ public class PromotionCouponServiceTests {
      /*프로모션 쿠폰 등록*/
      @Test
      @Description("프로모션 쿠폰 등록")
-     public void registerPromotionCoupon() {
+     private void registerPromotionCoupon() {
 
 
      }
@@ -27,7 +25,7 @@ public class PromotionCouponServiceTests {
      /*프로모션 쿠폰 조회*/
      @Test
      @Description("프로모션 쿠폰 등록")
-     public void findPromotionCoupon() {
+     private void findPromotionCoupon() {
 
      }
 
