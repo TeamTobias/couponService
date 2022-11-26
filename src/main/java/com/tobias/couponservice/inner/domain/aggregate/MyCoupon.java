@@ -1,11 +1,8 @@
 package com.tobias.couponservice.inner.domain.aggregate;
 
-import com.tobias.couponservice.inner.domain.entity.BrandCouponItem;
-import com.tobias.couponservice.inner.domain.entity.PromotionCouponItem;
 import lombok.*;
 
 import javax.persistence.*;
-import java.util.Collection;
 import java.util.List;
 
 @Entity

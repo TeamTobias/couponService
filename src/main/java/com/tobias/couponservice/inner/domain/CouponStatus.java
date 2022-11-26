@@ -1,4 +1,4 @@
-package com.tobias.couponservice.inner.domain.entity;
+package com.tobias.couponservice.inner.domain;
 
 public enum CouponStatus {
     ENABLE,

@@ -1,6 +1,6 @@
-package com.tobias.couponservice.inner.domain.entity;
+package com.tobias.couponservice.inner.domain.aggregate;
 
-import com.tobias.couponservice.inner.domain.aggregate.MyCoupon;
+import com.tobias.couponservice.inner.domain.CouponStatus;
 import lombok.*;
 
 import javax.persistence.*;
@@ -10,11 +10,11 @@ import javax.persistence.*;
 @Setter
 @ToString
 @RequiredArgsConstructor
-@Table(name = "brandcouponitem")
-public class BrandCouponItem {
+@Table(name = "promotioncouponitem")
+public class PromotionCouponItem {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id", nullable = false)
+    @Column(name = "promotioncouponitemid", nullable = false)
     private Long id;
 
     @ManyToOne
@@ -23,5 +23,4 @@ public class BrandCouponItem {
 
     @Enumerated(EnumType.STRING)
     private CouponStatus status;
-
 }
