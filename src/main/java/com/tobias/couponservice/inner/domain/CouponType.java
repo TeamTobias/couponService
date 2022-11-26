@@ -1,6 +1,6 @@
 package com.tobias.couponservice.inner.domain;
 
-public enum PromotionType {
+public enum CouponType {
     PERCENTAGE,
     AMOUNT,
 }

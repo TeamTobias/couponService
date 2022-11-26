@@ -1,5 +1,6 @@
 package com.tobias.couponservice.inner.domain.entity;
 
+import com.tobias.couponservice.inner.domain.BrandCouponPermitStatus;
 import com.tobias.couponservice.inner.domain.CouponType;
 import lombok.*;
 import org.springframework.data.annotation.CreatedDate;
@@ -12,17 +13,23 @@ import java.util.Date;
 @Setter
 @ToString
 @RequiredArgsConstructor
-@Table(name = "promotioncoupon")
-public class PromotionCoupon {
-    /*쿠폰 id*/
+@Table(name = "brandcoupon")
+public class BrandCoupon {
+
+    /*브랜드 쿠폰 id*/
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "promotioncouponid", nullable = false)
+    @Column(name = "brandcouponid", nullable = false)
     private Long id;
 
-    /*쿠폰 등록자 id*/
-    @Column(name = "managerid", nullable = false)
-    private Long managerid;
+    /*브랜드 id*/
+    @Column(name = "brandid", nullable = false)
+    private Long brandId;
+
+    /*쿠폰 인가 상태*/ /*TODO: - 설계도 도메인 모델 수정하기*/
+    @Enumerated(EnumType.STRING)
+    @Column(name = "brandcouponpermitstatus", nullable = false)
+    private BrandCouponPermitStatus status;
 
     /*쿠폰 내용*/
     @Column(name = "description", nullable = false)
@@ -31,10 +38,10 @@ public class PromotionCoupon {
     /*쿠폰 타입*/
     @Enumerated(EnumType.STRING)
     @Column(name = "coupontype", nullable = false)
-    private CouponType couponType;
+    private CouponType type;
 
     /*쿠폰 적용 가능 금액*/
-    @Column(name = "leastprice", nullable = false)
+    @Column(name = "applyamount", nullable = false)
     private Long leastPrice;
 
     /*쿠폰 시작일*/

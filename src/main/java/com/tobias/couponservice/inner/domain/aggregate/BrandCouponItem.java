@@ -13,12 +13,11 @@ import javax.persistence.*;
 @Table(name = "brandcouponitem")
 public class BrandCouponItem {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "brandcouponitemid", nullable = false)
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "mycouponid")
     private MyCoupon myCoupon;
 
     @Enumerated(EnumType.STRING)
