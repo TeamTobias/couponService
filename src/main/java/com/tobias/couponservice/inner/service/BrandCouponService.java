@@ -5,6 +5,11 @@ import com.tobias.couponservice.outer.dto.RegisterdRequestDto;
 
 import java.util.List;
 
+/*
+* @Description : 판매자 쿠폰 서비스
+* @Author : ImKunYoung
+*
+* */
 public interface BrandCouponService {
 
     /*판매자 쿠폰 등록 요청*/
