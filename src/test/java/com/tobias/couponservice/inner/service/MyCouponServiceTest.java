@@ -94,7 +94,7 @@ public class MyCouponServiceTest {
         myCouponService.useMyCoupon("1", 1L);
 
         // couponItem의 status가 USED로 변경되었는지 확인
-        Assertions.assertEquals(CouponItemStatus.USED, couponItemRepository.findByUseridWithCoupon("1", coupon).getStatus());
+        Assertions.assertEquals(CouponItemStatus.USED, couponItemRepository.findByUseridAndCoupon("1", coupon).getStatus());
 
     }
 
