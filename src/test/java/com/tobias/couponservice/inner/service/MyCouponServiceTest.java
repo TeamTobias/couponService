@@ -72,7 +72,7 @@ public class MyCouponServiceTest {
 
 
     /*내 쿠폰 사용*/
-    @Description("내 쿠폰 등록")
+    @Description("내 쿠폰 사용")
     @Commit
     @Test
     void useMyCoupon() {
