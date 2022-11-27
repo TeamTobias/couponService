@@ -39,7 +39,9 @@ public class MyCouponServiceImpl implements MyCouponService {
 
     @Override
     public List<CouponItem> findMyCoupon(String userid) {
-        return (List<CouponItem>) couponItemRepository.findByUserid(userid);
+
+        return couponItemRepository.findByUseridAndStatus(userid, CouponItemStatus.ENABLED);
+
     }
 
 

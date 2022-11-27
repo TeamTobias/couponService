@@ -1,6 +1,7 @@
 package com.tobias.couponservice.inner.service;
 
 import com.tobias.couponservice.inner.domain.entity.Coupon;
+import com.tobias.couponservice.inner.domain.entity.CouponItem;
 import com.tobias.couponservice.inner.domain.standardType.CouponItemStatus;
 import com.tobias.couponservice.inner.domain.standardType.PermitStatus;
 import com.tobias.couponservice.inner.domain.standardType.PublisherType;
@@ -35,7 +36,7 @@ public class MyCouponServiceTest {
     @BeforeAll
     static void beforeAll() {
 
-        System.setProperty("spring.profiles.active", "test");
+        System.setProperty("spring.profiles.active", "local");
 
     }
 
@@ -71,12 +72,71 @@ public class MyCouponServiceTest {
     }
 
 
+    /*내 쿠폰 조회*/
+    //테스트
+    //- coupon save
+    //- couponitem save
+    //- couponitem service :: findmycoupon(userid) 호출
+    //- for couponitem.getType !=ENABLE -> fail
+    //- for couponitem.getType == ENABLE -> success
+    @Description("내 쿠폰 조회")
+    @Commit
+    @Test
+    void findMyCoupon() {
+
+        //coupon save
+        Coupon coupon = Coupon.builder()
+                .publisherType(PublisherType.BRAND)
+                .permitStatus(PermitStatus.PERMIT)
+                .build();
+        couponRepository.save(coupon);
+
+        //couponitem sample data 채움
+        couponItemRepository.save(CouponItem.builder()
+                .userid("1")
+                .coupon(coupon)
+                .status(CouponItemStatus.ENABLED)
+                .build());
+
+
+        //coupon save
+        Coupon coupon2 = Coupon.builder()
+                .publisherType(PublisherType.MANAGER)
+                .permitStatus(PermitStatus.PERMIT)
+                .build();
+
+        couponRepository.save(coupon2);
+
+        //couponitem sample data 채움
+        couponItemRepository.save(CouponItem.builder()
+                .userid("1")
+                .coupon(coupon2)
+                .status(CouponItemStatus.DISABLED)
+                .build());
+
+        // couponitem service :: findmycoupon(userid) 호출
+
+
+
+
+        for (CouponItem couponItem : myCouponService.findMyCoupon("1")) {
+            System.out.println("couponItem = " + couponItem);
+            if (couponItem.getStatus() != CouponItemStatus.ENABLED) {
+                System.out.println("fail");
+                Assertions.fail();
+            } else {
+                Assertions.assertTrue(true);
+            }
+        }
+
+    }
+
+
     /*내 쿠폰 사용*/
     @Description("내 쿠폰 사용")
     @Commit
     @Test
     void useMyCoupon() {
-
 
         Coupon coupon = Coupon.builder()
                 .id(1L)

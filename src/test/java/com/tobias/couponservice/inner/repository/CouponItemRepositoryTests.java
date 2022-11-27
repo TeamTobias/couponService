@@ -58,15 +58,6 @@ public class CouponItemRepositoryTests {
     }
 
 
-    @Test
-    @Commit
-    @Transactional
-    @Description("userid로 couponitem 조회 테스트")
-    void findByUserid() {
-
-        couponItemRepository.findByUserid("1").forEach(System.out::println);
-
-    }
 
 
 
