@@ -1,9 +1,9 @@
 package com.tobias.couponservice.outer.dto;
 
 import com.tobias.couponservice.inner.domain.standardType.Type;
-import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 
+import javax.validation.constraints.NotNull;
 import java.util.Date;
 
 @Data
