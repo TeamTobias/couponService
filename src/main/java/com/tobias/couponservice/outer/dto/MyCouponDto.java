@@ -22,4 +22,8 @@ public class MyCouponDto {
     /*쿠폰 일련 번호*/
     private String couponid;
 
+    public Long getCouponid() {
+        return Long.valueOf(couponid);
+    }
+
 }

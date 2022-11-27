@@ -1,6 +1,6 @@
 package com.tobias.couponservice.inner.repository;
 
-import com.tobias.couponservice.inner.domain.aggregate.CouponItem;
+import com.tobias.couponservice.inner.domain.entity.CouponItem;
 import com.tobias.couponservice.inner.domain.entity.Coupon;
 import com.tobias.couponservice.inner.domain.standardType.PermitStatus;
 import com.tobias.couponservice.inner.domain.standardType.PublisherType;
@@ -67,6 +67,9 @@ public class CouponItemRepositoryTests {
         couponItemRepository.findByUserid("1").forEach(System.out::println);
 
     }
+
+
+
 
 
 }

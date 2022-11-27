@@ -1,7 +1,6 @@
-package com.tobias.couponservice.inner.domain.aggregate;
+package com.tobias.couponservice.inner.domain.entity;
 
 import com.tobias.couponservice.inner.domain.standardType.CouponItemStatus;
-import com.tobias.couponservice.inner.domain.entity.Coupon;
 import lombok.*;
 
 import javax.persistence.*;
@@ -17,7 +16,6 @@ import java.io.Serializable;
 public class CouponItem implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
     private Long id;
 
     /*사용자 일련 번호*/

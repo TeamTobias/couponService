@@ -1,6 +1,6 @@
 package com.tobias.couponservice.inner.service;
 
-import com.tobias.couponservice.inner.domain.aggregate.CouponItem;
+import com.tobias.couponservice.inner.domain.entity.CouponItem;
 import com.tobias.couponservice.outer.dto.MyCouponDto;
 
 import java.util.List;

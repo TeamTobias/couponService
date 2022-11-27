@@ -23,7 +23,6 @@ public class Coupon implements Serializable {
     private Long id;
 
     /*쿠폰 발행처*/
-    @Column(nullable = false)
     @Enumerated(EnumType.STRING)
     private PublisherType publisherType;
 
@@ -38,11 +37,9 @@ public class Coupon implements Serializable {
     private String managerid;
 
     /*쿠폰 내용*/
-    @Column(nullable = false)
     private String content;
 
     /*쿠폰 타입*/
-    @Column(nullable = false)
     @Enumerated(EnumType.STRING)
     private Type type;
 
@@ -50,20 +47,16 @@ public class Coupon implements Serializable {
     private int discountAmount;
 
     /*쿠폰 적용 가능 금액*/
-    @Column(nullable = false)
     private int leastAmount;
 
     /*쿠폰 시작일*/
-    @Column(nullable = false)
     private Date startDate;
 
     /*쿠폰 종료일*/
-    @Column(nullable = false)
     private Date endDate;
 
     /*쿠폰 생성일*/
     @CreatedDate
-    @Column(name = "createdAt", updatable = false)
     private Date createdAt;
 
 
