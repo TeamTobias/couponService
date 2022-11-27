@@ -56,6 +56,9 @@ dependencies {
 
     implementation 'com.h2database:h2'
 
+
+    implementation 'org.springdoc:springdoc-openapi-ui:1.6.11'
+
 }
 
 dependencyManagement {
