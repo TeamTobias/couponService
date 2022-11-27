@@ -7,6 +7,7 @@ import lombok.*;
 import org.springframework.data.annotation.CreatedDate;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Date;
 
 @Entity
@@ -16,10 +17,9 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class Coupon {
+public class Coupon implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id", nullable = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     /*쿠폰 발행처*/
@@ -63,6 +63,7 @@ public class Coupon {
 
     /*쿠폰 생성일*/
     @CreatedDate
+    @Column(name = "createdAt", updatable = false)
     private Date createdAt;
 
 
