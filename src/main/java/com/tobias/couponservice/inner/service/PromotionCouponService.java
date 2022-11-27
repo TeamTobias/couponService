@@ -5,10 +5,8 @@ import com.tobias.couponservice.inner.domain.entity.Coupon;
 import java.util.List;
 
 /*
-*
 * @Description : 프로모션 쿠폰 서비스
 * @Author : ImKunYoung
-*
 * */
 public interface PromotionCouponService {
 

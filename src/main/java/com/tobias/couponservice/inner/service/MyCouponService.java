@@ -6,10 +6,8 @@ import com.tobias.couponservice.outer.dto.MyCouponDto;
 import java.util.List;
 
 /*
-*
 * @Description : 사용자 쿠폰 서비스
 * @Author : ImKunYoung
-*
 * */
 public interface MyCouponService {
 

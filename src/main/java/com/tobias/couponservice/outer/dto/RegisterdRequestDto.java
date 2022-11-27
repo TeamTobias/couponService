@@ -1,13 +1,11 @@
 package com.tobias.couponservice.outer.dto;
 
 import lombok.Data;
-
 import java.util.Date;
+
 /*
-*
 * @Description : 판매자 쿠폰 등록 요청
 * @Author : ImKunYoung
-*
 * */
 
 @Data
