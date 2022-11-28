@@ -21,7 +21,7 @@ import org.springframework.test.annotation.Commit;
 
 @Profile("test")
 @SpringBootTest
-public class MyCouponServiceTest {
+public class CouponItemServiceTests {
 
     @Autowired
     private CouponItemService couponItemService;
