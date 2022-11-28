@@ -16,7 +16,7 @@ import org.springframework.test.annotation.Commit;
 import java.util.Date;
 
 @SpringBootTest
-public class BrandCouponServiceTests {
+public class CouponServiceTests {
 
     @Autowired
     private CouponRepository couponRepository;
@@ -30,16 +30,16 @@ public class BrandCouponServiceTests {
     @Commit
     @Description("판매자 쿠폰 등록 요청")
     public void registerBrandCouponRequest() {
-         // BrandCouponRequestDto Builder
+        // BrandCouponRequestDto Builder
         RegisterdRequestDto registerdRequestDto = RegisterdRequestDto.builder()
-                 .brandid("1234")
-                 .openDate(new Date())
-                 .endDate(new Date())
-                 .content("쿠폰 내용")
-                 .type("PERCENTAG")
-                 .discountAmount(1000)
-                 .leastAmount(5000)
-                 .build();
+                .brandid("1234")
+                .openDate(new Date())
+                .endDate(new Date())
+                .content("쿠폰 내용")
+                .type("PERCENTAG")
+                .discountAmount(1000)
+                .leastAmount(5000)
+                .build();
 
         // BrandCouponRequestService.registerBrandCouponRequest(RegisterdRequestDto)
         couponService.registerBrandCouponRequest(registerdRequestDto);
@@ -121,4 +121,23 @@ public class BrandCouponServiceTests {
 
     /*판매자 쿠폰 만료*/
 
+
+
+
+
+
+    /*프로모션 쿠폰 등록*/
+    @Test
+    @Description("프로모션 쿠폰 등록")
+    private void registerPromotionCoupon() {
+
+
+    }
+
+    /*프로모션 쿠폰 조회*/
+    @Test
+    @Description("프로모션 쿠폰 등록")
+    private void findPromotionCoupon() {
+
+    }
 }
