@@ -1,7 +1,7 @@
-package com.tobias.couponservice.inner.serviceImpl;
+package com.tobias.couponservice.inner.serviceImpl.manager;
 
 import com.tobias.couponservice.inner.domain.entity.Coupon;
-import com.tobias.couponservice.inner.service.PromotionCouponService;
+import com.tobias.couponservice.inner.service.manager.PromotionCouponService;
 
 import java.util.List;
 

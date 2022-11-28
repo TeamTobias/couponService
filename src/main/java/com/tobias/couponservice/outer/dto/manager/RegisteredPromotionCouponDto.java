@@ -1,6 +1,6 @@
-package com.tobias.couponservice.outer.dto;
+package com.tobias.couponservice.outer.dto.manager;
 
-import com.tobias.couponservice.inner.domain.standardType.Type;
+import com.tobias.couponservice.inner.domain.entity.standardType.Type;
 import lombok.Data;
 
 import javax.validation.constraints.NotNull;

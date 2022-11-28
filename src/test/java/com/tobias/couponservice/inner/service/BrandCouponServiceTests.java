@@ -1,11 +1,12 @@
 package com.tobias.couponservice.inner.service;
 
 import com.tobias.couponservice.inner.domain.entity.Coupon;
-import com.tobias.couponservice.inner.domain.standardType.PermitStatus;
-import com.tobias.couponservice.inner.domain.standardType.PublisherType;
-import com.tobias.couponservice.inner.domain.standardType.Type;
+import com.tobias.couponservice.inner.domain.entity.standardType.PermitStatus;
+import com.tobias.couponservice.inner.domain.entity.standardType.PublisherType;
+import com.tobias.couponservice.inner.domain.entity.standardType.Type;
 import com.tobias.couponservice.inner.repository.CouponRepository;
-import com.tobias.couponservice.outer.dto.RegisterdRequestDto;
+import com.tobias.couponservice.inner.service.brand.BrandCouponService;
+import com.tobias.couponservice.outer.dto.brand.RegisterdRequestDto;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

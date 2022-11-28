@@ -1,6 +1,6 @@
 package com.tobias.couponservice.inner.domain.entity;
 
-import com.tobias.couponservice.inner.domain.standardType.CouponItemStatus;
+import com.tobias.couponservice.inner.domain.entity.standardType.CouponItemStatus;
 import lombok.*;
 
 import javax.persistence.*;

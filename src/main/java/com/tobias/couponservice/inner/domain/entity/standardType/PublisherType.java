@@ -1,4 +1,4 @@
-package com.tobias.couponservice.inner.domain.standardType;
+package com.tobias.couponservice.inner.domain.entity.standardType;
 
 public enum PublisherType {
     BRAND, // 브랜드

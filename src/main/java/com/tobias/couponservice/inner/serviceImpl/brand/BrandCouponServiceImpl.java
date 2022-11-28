@@ -1,11 +1,11 @@
-package com.tobias.couponservice.inner.serviceImpl;
+package com.tobias.couponservice.inner.serviceImpl.brand;
 
 import com.tobias.couponservice.inner.domain.entity.Coupon;
-import com.tobias.couponservice.inner.domain.standardType.PermitStatus;
-import com.tobias.couponservice.inner.domain.standardType.PublisherType;
+import com.tobias.couponservice.inner.domain.entity.standardType.PermitStatus;
+import com.tobias.couponservice.inner.domain.entity.standardType.PublisherType;
 import com.tobias.couponservice.inner.repository.CouponRepository;
-import com.tobias.couponservice.inner.service.BrandCouponService;
-import com.tobias.couponservice.outer.dto.RegisterdRequestDto;
+import com.tobias.couponservice.inner.service.brand.BrandCouponService;
+import com.tobias.couponservice.outer.dto.brand.RegisterdRequestDto;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.convention.MatchingStrategies;

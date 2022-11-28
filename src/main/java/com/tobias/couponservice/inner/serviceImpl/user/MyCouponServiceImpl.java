@@ -1,11 +1,11 @@
-package com.tobias.couponservice.inner.serviceImpl;
+package com.tobias.couponservice.inner.serviceImpl.user;
 
 import com.tobias.couponservice.inner.domain.entity.Coupon;
 import com.tobias.couponservice.inner.domain.entity.CouponItem;
-import com.tobias.couponservice.inner.domain.standardType.CouponItemStatus;
+import com.tobias.couponservice.inner.domain.entity.standardType.CouponItemStatus;
 import com.tobias.couponservice.inner.repository.CouponItemRepository;
-import com.tobias.couponservice.inner.service.MyCouponService;
-import com.tobias.couponservice.outer.dto.MyCouponDto;
+import com.tobias.couponservice.inner.service.user.MyCouponService;
+import com.tobias.couponservice.outer.dto.user.MyCouponDto;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;

@@ -1,4 +1,4 @@
-package com.tobias.couponservice.outer.vo.BrandCoupon;
+package com.tobias.couponservice.outer.vo.user;
 
 import lombok.Data;
 

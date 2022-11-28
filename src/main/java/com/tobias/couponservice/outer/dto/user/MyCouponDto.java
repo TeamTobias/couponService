@@ -1,4 +1,4 @@
-package com.tobias.couponservice.outer.dto;
+package com.tobias.couponservice.outer.dto.user;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

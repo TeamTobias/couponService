@@ -1,4 +1,4 @@
-package com.tobias.couponservice.inner.service;
+package com.tobias.couponservice.inner.service.manager;
 
 import com.tobias.couponservice.inner.domain.entity.Coupon;
 

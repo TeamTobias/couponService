@@ -1,8 +1,8 @@
 package com.tobias.couponservice.inner.domain.entity;
 
-import com.tobias.couponservice.inner.domain.standardType.PermitStatus;
-import com.tobias.couponservice.inner.domain.standardType.PublisherType;
-import com.tobias.couponservice.inner.domain.standardType.Type;
+import com.tobias.couponservice.inner.domain.entity.standardType.PermitStatus;
+import com.tobias.couponservice.inner.domain.entity.standardType.PublisherType;
+import com.tobias.couponservice.inner.domain.entity.standardType.Type;
 import lombok.*;
 import org.springframework.data.annotation.CreatedDate;
 

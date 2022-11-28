@@ -2,9 +2,9 @@ package com.tobias.couponservice.inner.repository;
 
 import com.tobias.couponservice.inner.domain.entity.CouponItem;
 import com.tobias.couponservice.inner.domain.entity.Coupon;
-import com.tobias.couponservice.inner.domain.standardType.PermitStatus;
-import com.tobias.couponservice.inner.domain.standardType.PublisherType;
-import com.tobias.couponservice.inner.domain.standardType.Type;
+import com.tobias.couponservice.inner.domain.entity.standardType.PermitStatus;
+import com.tobias.couponservice.inner.domain.entity.standardType.PublisherType;
+import com.tobias.couponservice.inner.domain.entity.standardType.Type;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +12,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.annotation.Description;
 import org.springframework.context.annotation.Profile;
 import org.springframework.test.annotation.Commit;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Date;
 

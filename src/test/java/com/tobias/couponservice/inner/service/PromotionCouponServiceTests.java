@@ -1,11 +1,10 @@
 package com.tobias.couponservice.inner.service;
 
+import com.tobias.couponservice.inner.service.manager.PromotionCouponService;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.annotation.Description;
 import org.springframework.context.annotation.Profile;
-
-import java.util.List;
 
 @SpringBootTest
 @Profile("dev")

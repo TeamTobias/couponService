@@ -2,7 +2,7 @@ package com.tobias.couponservice.inner.repository;
 
 import com.tobias.couponservice.inner.domain.entity.CouponItem;
 import com.tobias.couponservice.inner.domain.entity.Coupon;
-import com.tobias.couponservice.inner.domain.standardType.CouponItemStatus;
+import com.tobias.couponservice.inner.domain.entity.standardType.CouponItemStatus;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
