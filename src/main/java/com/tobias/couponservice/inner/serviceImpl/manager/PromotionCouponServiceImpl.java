@@ -1,11 +1,11 @@
 package com.tobias.couponservice.inner.serviceImpl.manager;
 
 import com.tobias.couponservice.inner.domain.entity.Coupon;
-import com.tobias.couponservice.inner.service.manager.PromotionCouponService;
+import com.tobias.couponservice.inner.service.CouponService;
 
 import java.util.List;
 
-public class PromotionCouponServiceImpl implements PromotionCouponService {
+public class PromotionCouponServiceImpl implements CouponService {
 
     @Override
     public void registerPromotionCoupon(String managerId) {

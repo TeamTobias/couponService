@@ -1,6 +1,5 @@
 package com.tobias.couponservice.inner.service;
 
-import com.tobias.couponservice.inner.service.manager.PromotionCouponService;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.annotation.Description;
@@ -10,7 +9,7 @@ import org.springframework.context.annotation.Profile;
 @Profile("dev")
 public class PromotionCouponServiceTests {
 
-     private PromotionCouponService promotionCouponService;
+     private CouponService couponService;
 
 
      /*프로모션 쿠폰 등록*/
