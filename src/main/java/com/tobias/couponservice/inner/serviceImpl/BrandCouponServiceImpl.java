@@ -2,6 +2,7 @@ package com.tobias.couponservice.inner.serviceImpl;
 
 import com.tobias.couponservice.inner.domain.entity.Coupon;
 import com.tobias.couponservice.inner.domain.standardType.PermitStatus;
+import com.tobias.couponservice.inner.domain.standardType.PublisherType;
 import com.tobias.couponservice.inner.repository.CouponRepository;
 import com.tobias.couponservice.inner.service.BrandCouponService;
 import com.tobias.couponservice.outer.dto.RegisterdRequestDto;
@@ -41,7 +42,7 @@ public class BrandCouponServiceImpl implements BrandCouponService {
 
     @Override
     public List<Coupon> findBrandCoupon(String brandId) {
-        return null;
+        return couponRepository.findByBrandidAndPublisherType(brandId, PublisherType.BRAND);
     }
 
 
