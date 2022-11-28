@@ -1,4 +1,4 @@
-package com.tobias.couponservice.inner.serviceImpl.brand;
+package com.tobias.couponservice.inner.serviceImpl;
 
 import com.tobias.couponservice.inner.domain.entity.Coupon;
 import com.tobias.couponservice.inner.domain.entity.standardType.PermitStatus;
@@ -15,10 +15,12 @@ import java.util.List;
 
 @Service
 @RequiredArgsConstructor
-public class BrandCouponServiceImpl implements CouponService {
+public class CouponServiceImpl implements CouponService {
 
     private final CouponRepository couponRepository;
 
+
+    /*브랜드 쿠폰*/
     @Override /*TODO- Publish Type 추가*/
     public String registerBrandCouponRequest(RegisterdRequestDto registerdRequestDto) {
 
@@ -39,13 +41,23 @@ public class BrandCouponServiceImpl implements CouponService {
         return "success"; /*TODO: -품격 있게 수정*/
     }
 
-
     @Override
     public List<Coupon> findBrandCoupon(String brandId) {
         return couponRepository.findByBrandidAndPublisherType(brandId, PublisherType.BRAND);
     }
 
 
+
+
+    /*프로모션 쿠폰*/
+    @Override
+    public void registerPromotionCoupon(String managerId) {
+    }
+
+    @Override
+    public List<Coupon> findPromotionCoupon() {
+        return null;
+    }
+
+
 }
-
-

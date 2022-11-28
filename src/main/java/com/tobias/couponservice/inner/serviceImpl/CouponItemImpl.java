@@ -1,4 +1,4 @@
-package com.tobias.couponservice.inner.serviceImpl.user;
+package com.tobias.couponservice.inner.serviceImpl;
 
 import com.tobias.couponservice.inner.domain.entity.Coupon;
 import com.tobias.couponservice.inner.domain.entity.CouponItem;
@@ -15,7 +15,7 @@ import java.util.List;
 @Service
 @Slf4j
 @RequiredArgsConstructor
-public class MyCouponServiceImpl implements CouponItemService {
+public class CouponItemImpl implements CouponItemService {
 
     private final CouponItemRepository couponItemRepository;
 
