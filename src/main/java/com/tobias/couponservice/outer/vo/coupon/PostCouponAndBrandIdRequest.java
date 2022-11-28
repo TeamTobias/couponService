@@ -9,7 +9,7 @@ import lombok.Data;
 import java.util.Date;
 
 @Data
-public class CreatePromotionCouponRequest {
+public class PostCouponAndBrandIdRequest {
 
     //- 관리자 일련 번호
     private String brandid;
