@@ -25,3 +25,6 @@ spring:
     hibernate:
       ddl-auto: create
     show-sql: true
+
+greeting:
+  message: this is dev application.yml

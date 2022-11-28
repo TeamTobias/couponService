@@ -27,22 +27,27 @@ dependencies {
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
 
+
+
     implementation  'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
+
+
+    implementation 'org.modelmapper:modelmapper:3.1.0'
 
 
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
 //    implementation 'org.springframework.cloud:spring-cloud-starter-bus-amqp'
 
 
-    implementation 'org.springframework.cloud:spring-cloud-starter-config'
+//    implementation 'org.springframework.cloud:spring-cloud-starter-config'
     implementation 'org.springframework.cloud:spring-cloud-starter-bootstrap'
 
 
-    implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
+//    implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
 
 
-    implementation 'org.springframework.cloud:spring-cloud-starter-circuitbreaker-resilience4j'
+//    implementation 'org.springframework.cloud:spring-cloud-starter-circuitbreaker-resilience4j'
 
     implementation 'org.modelmapper:modelmapper:3.1.0'
 
@@ -51,7 +56,11 @@ dependencies {
 
     implementation 'com.h2database:h2'
 
-    runtimeOnly 'com.mysql:mysql-connector-j'
+
+    implementation 'org.springdoc:springdoc-openapi-ui:1.6.11'
+
+    testImplementation 'org.jmock:jmock-junit4:2.12.0'
+
 }
 
 dependencyManagement {
