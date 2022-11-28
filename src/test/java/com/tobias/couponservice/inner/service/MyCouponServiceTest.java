@@ -7,7 +7,6 @@ import com.tobias.couponservice.inner.domain.entity.standardType.PermitStatus;
 import com.tobias.couponservice.inner.domain.entity.standardType.PublisherType;
 import com.tobias.couponservice.inner.repository.CouponItemRepository;
 import com.tobias.couponservice.inner.repository.CouponRepository;
-import com.tobias.couponservice.inner.service.user.MyCouponService;
 import com.tobias.couponservice.outer.dto.user.MyCouponDto;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
@@ -25,7 +24,7 @@ import org.springframework.test.annotation.Commit;
 public class MyCouponServiceTest {
 
     @Autowired
-    private MyCouponService myCouponService;
+    private CouponItemService couponItemService;
 
     @Autowired
     private CouponRepository couponRepository;
@@ -59,13 +58,13 @@ public class MyCouponServiceTest {
     @Test
     void saveMyCoupon() {
 
-        myCouponService.saveMyCoupon(MyCouponDto.builder()
+        couponItemService.saveMyCoupon(MyCouponDto.builder()
                 .userid("1")
                 .couponid("1")
                 .build());
 
 
-        myCouponService.saveMyCoupon(MyCouponDto.builder()
+        couponItemService.saveMyCoupon(MyCouponDto.builder()
                 .userid("1")
                 .couponid("1")
                 .build());
@@ -120,7 +119,7 @@ public class MyCouponServiceTest {
 
 
 
-        for (CouponItem couponItem : myCouponService.findMyCoupon("1")) {
+        for (CouponItem couponItem : couponItemService.findMyCoupon("1")) {
             System.out.println("couponItem = " + couponItem);
             if (couponItem.getStatus() != CouponItemStatus.ENABLED) {
                 System.out.println("fail");
@@ -147,12 +146,12 @@ public class MyCouponServiceTest {
 
         couponRepository.save(coupon);
 
-        myCouponService.saveMyCoupon(MyCouponDto.builder()
+        couponItemService.saveMyCoupon(MyCouponDto.builder()
                 .userid("1")
                 .couponid("1")
                 .build());
 
-        myCouponService.useMyCoupon("1", 1L);
+        couponItemService.useMyCoupon("1", 1L);
 
         // couponItem의 status가 USED로 변경되었는지 확인
         Assertions.assertEquals(CouponItemStatus.USED, couponItemRepository.findByUseridAndCoupon("1", coupon).getStatus());

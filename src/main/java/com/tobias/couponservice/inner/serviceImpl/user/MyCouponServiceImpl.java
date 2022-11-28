@@ -4,7 +4,7 @@ import com.tobias.couponservice.inner.domain.entity.Coupon;
 import com.tobias.couponservice.inner.domain.entity.CouponItem;
 import com.tobias.couponservice.inner.domain.entity.standardType.CouponItemStatus;
 import com.tobias.couponservice.inner.repository.CouponItemRepository;
-import com.tobias.couponservice.inner.service.user.MyCouponService;
+import com.tobias.couponservice.inner.service.CouponItemService;
 import com.tobias.couponservice.outer.dto.user.MyCouponDto;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -15,7 +15,7 @@ import java.util.List;
 @Service
 @Slf4j
 @RequiredArgsConstructor
-public class MyCouponServiceImpl implements MyCouponService {
+public class MyCouponServiceImpl implements CouponItemService {
 
     private final CouponItemRepository couponItemRepository;
 
