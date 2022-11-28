@@ -1,6 +1,7 @@
 package com.tobias.couponservice.outer.web.rest;
 
 import com.tobias.couponservice.outer.vo.ResponseMessage;
+import com.tobias.couponservice.outer.vo.coupon.GetPromotionCouponResponse;
 import com.tobias.couponservice.outer.vo.coupon.PostPromotionCouponRequest;
 import com.tobias.couponservice.outer.vo.couponItem.getCouponItemAndUseridResponse;
 import io.swagger.v3.oas.annotations.Operation;
@@ -36,7 +37,7 @@ public class PromotionCouponController {
 
     @Operation(summary= "프로모션 쿠폰 조회", tags = "프로모션 쿠폰")
     @ApiResponses({
-            @ApiResponse(responseCode = "200", content = @Content(mediaType = "application/json", array = @ArraySchema(schema = @Schema(implementation = getCouponItemAndUseridResponse.class)))),
+            @ApiResponse(responseCode = "200", content = @Content(mediaType = "application/json", array = @ArraySchema(schema = @Schema(implementation = GetPromotionCouponResponse.class)))),
     })
     @GetMapping("/v1")
     public void getPromotionCoupon() {
