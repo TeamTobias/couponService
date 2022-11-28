@@ -4,8 +4,11 @@ package com.tobias.couponservice.outer.vo.coupon;
 */
 
 
+import lombok.Data;
+
 import java.util.Date;
 
+@Data
 public class GetBrandCouponResponse {
 
     //- 쿠폰 인가 상태
