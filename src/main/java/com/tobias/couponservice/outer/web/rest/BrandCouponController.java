@@ -2,6 +2,7 @@ package com.tobias.couponservice.outer.web.rest;
 
 import com.tobias.couponservice.outer.vo.ResponseMessage;
 import com.tobias.couponservice.outer.vo.coupon.GetBrandCouponResponse;
+import com.tobias.couponservice.outer.vo.coupon.GetBrandReqeustCoupnResponse;
 import com.tobias.couponservice.outer.vo.coupon.PostBrandCouponRequest;
 import com.tobias.couponservice.outer.vo.couponItem.getCouponItemAndUseridResponse;
 import io.swagger.v3.oas.annotations.Operation;
@@ -13,10 +14,7 @@ import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @Tag(name = "brandCoupon", description = "브랜드 쿠폰 API")
 @RestController
@@ -41,7 +39,21 @@ public class BrandCouponController {
             @ApiResponse(responseCode = "200", content = @Content(mediaType = "application/json", array = @ArraySchema(schema = @Schema(implementation = getCouponItemAndUseridResponse.class)))),
     })
     @GetMapping("/v1/{brandid}")
-    public void getBrandCoupon() {
+    public void getBrandCoupon(@PathVariable("brandid") String brandid) {
+
+
+    }
+
+
+
+
+    @Operation(summary= "브랜드 쿠폰 등록 요청 조회", tags = "브랜드 쿠폰")
+    @ApiResponses({
+            @ApiResponse(responseCode = "200", content = @Content(mediaType = "application/json", array = @ArraySchema(schema = @Schema(implementation = GetBrandReqeustCoupnResponse.class)))),
+    })
+    @GetMapping("/v1")
+    public void getBrandRequestCoupon() {
+
 
     }
 
