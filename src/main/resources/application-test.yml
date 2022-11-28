@@ -33,6 +33,7 @@ springdoc:
   paths-to-match:
     - /myCoupon/v1/**
     - /promotionCoupon/v1/**
+    - /brandCoupon/v1/**
 
 greeting:
   message: this is test application.yml

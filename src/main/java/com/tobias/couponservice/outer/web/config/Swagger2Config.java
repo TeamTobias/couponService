@@ -23,7 +23,7 @@ public class Swagger2Config {
 
     @Bean
     public GroupedOpenApi publicApi() {
-        String[] paths = {"/myCoupon/v1/**", "/promotionCoupon/v1/**"};
+        String[] paths = {"/myCoupon/v1/**", "/promotionCoupon/v1/**", "/brandCoupon/v1/**"};
 
         return GroupedOpenApi.builder()
                 .group("쿠폰서비스 API v1")
