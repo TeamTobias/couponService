@@ -1,6 +1,9 @@
 package com.tobias.couponservice.inner.service;
 
+import com.tobias.couponservice.inner.domain.entity.Coupon;
 import com.tobias.couponservice.inner.domain.standardType.PermitStatus;
+import com.tobias.couponservice.inner.domain.standardType.PublisherType;
+import com.tobias.couponservice.inner.domain.standardType.Type;
 import com.tobias.couponservice.inner.repository.CouponRepository;
 import com.tobias.couponservice.outer.dto.RegisterdRequestDto;
 import org.junit.jupiter.api.Assertions;
@@ -55,6 +58,64 @@ public class BrandCouponServiceTests {
     @Test
     @Description("판매자 쿠폰 조회")
     public void findBrandCoupon() {
+        // 쿠폰 엔티티 builder (brandid = “1”, PublisherType = Brand)
+        Coupon coupon = Coupon.builder()
+                .brandid("1")
+                .publisherType(PublisherType.valueOf("BRAND"))
+                .openDate(new Date())
+                .endDate(new Date())
+                .content("쿠폰 내용")
+                .type(Type.valueOf("PERCENTAG"))
+                .discountAmount(1000)
+                .leastAmount(5000)
+                .permitStatus(PermitStatus.REQUESTED)
+                .build();
+
+        // couponRepository Save
+        couponRepository.save(coupon);
+
+        // 쿠폰 엔티티 builder  (brandid = “2”, PublisherType = Brand)
+        Coupon coupon2 = Coupon.builder()
+                .brandid("2")
+                .publisherType(PublisherType.valueOf("BRAND"))
+                .openDate(new Date())
+                .endDate(new Date())
+                .content("쿠폰 내용")
+                .type(Type.valueOf("PERCENTAG"))
+                .discountAmount(1000)
+                .leastAmount(5000)
+                .permitStatus(PermitStatus.REQUESTED)
+                .build();
+
+        // couponRepository Save
+        couponRepository.save(coupon2);
+
+        // 쿠폰 엔티티 builder  (brandid = “3”, PublisherType = MANAGER)
+        Coupon coupon3 = Coupon.builder()
+                .brandid("3")
+                .publisherType(PublisherType.valueOf("MANAGER"))
+                .openDate(new Date())
+                .endDate(new Date())
+                .content("쿠폰 내용")
+                .type(Type.valueOf("PERCENTAG"))
+                .discountAmount(1000)
+                .leastAmount(5000)
+                .permitStatus(PermitStatus.REQUESTED)
+                .build();
+
+        //couponRepository Save
+        couponRepository.save(coupon3);
+
+        // if each (Coupon Brandid == brandCouponService.findBrandCoupon(“1”)) && (PublisherType.BRAND == brandCouponService.findBrandCoupon(“1”)) true;
+        for (Coupon coupon1 : brandCouponService.findBrandCoupon("1")) {
+            if (coupon1.getBrandid().equals("1") && coupon1.getPublisherType().equals(PublisherType.BRAND)) {
+                Assertions.assertTrue(true);
+            } else {
+                Assertions.fail();
+            }
+        }
+
+
     }
 
 
