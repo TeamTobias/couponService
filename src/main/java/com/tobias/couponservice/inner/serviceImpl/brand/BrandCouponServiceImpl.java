@@ -19,7 +19,7 @@ public class BrandCouponServiceImpl implements BrandCouponService {
 
     private final CouponRepository couponRepository;
 
-    @Override
+    @Override /*TODO- Publish Type 추가*/
     public String registerBrandCouponRequest(RegisterdRequestDto registerdRequestDto) {
 
         // RegisterdRequestDto을 Coupon으로 매핑
