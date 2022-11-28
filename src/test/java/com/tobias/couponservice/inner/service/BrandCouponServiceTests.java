@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.annotation.Description;
+import org.springframework.test.annotation.Commit;
 
 import java.util.Date;
 
@@ -17,28 +18,31 @@ public class BrandCouponServiceTests {
     @Autowired
     private CouponRepository couponRepository;
 
+    @Autowired
     private BrandCouponService brandCouponService;
+
 
     /*판매자 쿠폰 등록 요청*/
     @Test
+    @Commit
     @Description("판매자 쿠폰 등록 요청")
     public void registerBrandCouponRequest() {
          // BrandCouponRequestDto Builder
         RegisterdRequestDto registerdRequestDto = RegisterdRequestDto.builder()
                  .brandid("1234")
                  .openDate(new Date())
-                 .closeDate(new Date())
+                 .endDate(new Date())
                  .content("쿠폰 내용")
-                 .salesType("SAiLES_TYPE")
+                 .type("PERCENTAG")
                  .discountAmount(1000)
                  .leastAmount(5000)
                  .build();
 
         // BrandCouponRequestService.registerBrandCouponRequest(RegisterdRequestDto)
-        String result = brandCouponService.registerBrandCouponRequest(registerdRequestDto);
+        brandCouponService.registerBrandCouponRequest(registerdRequestDto);
 
         // if couponrepository.finlast.status  == PermitStatus.REQUESTED true
-        if (couponRepository.findCouponByOOrderByCreatedAt().getPermitStatus().equals(PermitStatus.REQUESTED)) {
+        if (couponRepository.findCouponByOrderByCreatedAt().getPermitStatus().equals(PermitStatus.REQUESTED)) {
             Assertions.assertTrue(true);
         } else {
             Assertions.fail();

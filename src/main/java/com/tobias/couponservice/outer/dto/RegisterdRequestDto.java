@@ -25,13 +25,13 @@ public class RegisterdRequestDto {
     private Date openDate;
 
     //- 쿠폰 만료일
-    private Date closeDate;
+    private Date endDate;
 
     //- 쿠폰 내용
     private String content;
 
     //- 쿠폰 세일즈 타입
-    private String salesType;
+    private String type;
 
     //- 쿠폰 할인 금액
     private int discountAmount;

@@ -7,5 +7,5 @@ import java.awt.image.PixelGrabber;
 
 public interface CouponRepository extends JpaRepository<Coupon, Long> {
 
-    Coupon findCouponByOOrderByCreatedAt();
+    Coupon findCouponByOrderByCreatedAt();
 }

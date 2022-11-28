@@ -42,14 +42,13 @@ public class CouponItemRepositoryTests {
                 .content("content")
                 .type(Type.PERCENTAG)
                 .leastAmount(1000)
-                .startDate(new Date())
+                .openDate(new Date())
                 .endDate(new Date())
                 .build();
 
         couponRepository.save(coupon);
 
         couponItemRepository.save(CouponItem.builder().userid("1").coupon(coupon).build());
-//        couponItemRepository.save(CouponItem.builder().userid("1").coupon(coupon).build());
 
 
         couponRepository.findAll().forEach(System.out::println);

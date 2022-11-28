@@ -50,7 +50,7 @@ public class Coupon implements Serializable {
     private int leastAmount;
 
     /*쿠폰 시작일*/
-    private Date startDate;
+    private Date openDate;
 
     /*쿠폰 종료일*/
     private Date endDate;
