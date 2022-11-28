@@ -5,7 +5,6 @@ import com.tobias.couponservice.inner.domain.entity.standardType.PermitStatus;
 import com.tobias.couponservice.inner.domain.entity.standardType.PublisherType;
 import com.tobias.couponservice.inner.domain.entity.standardType.Type;
 import com.tobias.couponservice.inner.repository.CouponRepository;
-import com.tobias.couponservice.inner.service.brand.BrandCouponService;
 import com.tobias.couponservice.outer.dto.brand.RegisterdRequestDto;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -23,7 +22,7 @@ public class BrandCouponServiceTests {
     private CouponRepository couponRepository;
 
     @Autowired
-    private BrandCouponService brandCouponService;
+    private CouponService couponService;
 
 
     /*판매자 쿠폰 등록 요청*/
@@ -43,7 +42,7 @@ public class BrandCouponServiceTests {
                  .build();
 
         // BrandCouponRequestService.registerBrandCouponRequest(RegisterdRequestDto)
-        brandCouponService.registerBrandCouponRequest(registerdRequestDto);
+        couponService.registerBrandCouponRequest(registerdRequestDto);
 
         // if couponrepository.finlast.status  == PermitStatus.REQUESTED true
         if (couponRepository.findCouponByOrderByCreatedAt().getPermitStatus().equals(PermitStatus.REQUESTED)) {
@@ -108,7 +107,7 @@ public class BrandCouponServiceTests {
         couponRepository.save(coupon3);
 
         // if each (Coupon Brandid == brandCouponService.findBrandCoupon(“1”)) && (PublisherType.BRAND == brandCouponService.findBrandCoupon(“1”)) true;
-        for (Coupon coupon1 : brandCouponService.findBrandCoupon("1")) {
+        for (Coupon coupon1 : couponService.findBrandCoupon("1")) {
             if (coupon1.getBrandid().equals("1") && coupon1.getPublisherType().equals(PublisherType.BRAND)) {
                 Assertions.assertTrue(true);
             } else {
