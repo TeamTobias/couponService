@@ -21,10 +21,10 @@ public class CreatePromotionCouponRequest {
     private String type;
 
     //- 쿠폰 할인 금액
-    private Long discountAmount;
+    private int discountAmount;
 
     //- 쿠폰 사용 가능 금액
-    private Long leastAmount;
+    private int leastAmount;
 
     //- 쿠폰 시작일
     private Date openDate;

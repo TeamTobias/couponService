@@ -1,6 +1,7 @@
 package com.tobias.couponservice.outer.web.rest;
 
 import com.tobias.couponservice.outer.vo.ResponseMessage;
+import com.tobias.couponservice.outer.vo.couponItem.getCouponItemAndUseridResponse;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.ArraySchema;
 import io.swagger.v3.oas.annotations.media.Content;
@@ -35,7 +36,7 @@ public class MyCouponController {
     /*내 쿠폰 조회*/
     @Operation(summary= "내 쿠폰 조회", description = "내 쿠폰 조회", tags = "내 쿠폰")
     @ApiResponses({
-            @ApiResponse(responseCode = "200", content = @Content(mediaType = "application/json", array = @ArraySchema(schema = @Schema(implementation = ResponseMessage.class)))),
+            @ApiResponse(responseCode = "200", content = @Content(mediaType = "application/json", array = @ArraySchema(schema = @Schema(implementation = getCouponItemAndUseridResponse.class)))),
     })
     @PostMapping("/v1/{userid}")
     public ResponseEntity getMyCoupon(@PathVariable("userid") String userid) {

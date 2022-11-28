@@ -12,7 +12,7 @@ import java.util.Date;
 */
 
 @Data
-public class ReadUserCouponItemResponse {
+public class getCouponItemAndUseridResponse {
 
     //- 쿠폰 사용 상태
     private String status;
