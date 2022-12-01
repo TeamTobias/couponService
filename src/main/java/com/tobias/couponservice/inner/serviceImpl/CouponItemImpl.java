@@ -22,18 +22,12 @@ public class CouponItemImpl implements CouponItemService {
 
     @Override
     public void saveMyCoupon(MyCouponDto myCouponDto) {
-
-        Coupon coupon = Coupon.builder()
-                .id(myCouponDto.getCouponid())
-                .build();
+        Coupon coupon = new Coupon();
+        coupon.setId(myCouponDto);
 
         if (couponItemRepository.existsByUseridAndCoupon(myCouponDto.getUserid(), coupon))
-            log.info("이미 저장된 쿠폰입니다.");
-        else couponItemRepository.save(CouponItem.builder()
-                .userid("1")
-                .coupon(coupon)
-                .status(CouponItemStatus.ENABLED)
-                .build());
+             throw new RuntimeException("이미 등록된 쿠폰입니다.");
+        else couponItemRepository.save(new CouponItem(myCouponDto, coupon, CouponItemStatus.ENABLED));
     }
 
 
@@ -49,15 +43,8 @@ public class CouponItemImpl implements CouponItemService {
     public void useMyCoupon(String userid, Long couponItemId) {
 
         CouponItem couponItem = couponItemRepository.findByUseridAndCoupon(userid, Coupon.builder().id(couponItemId).build());
-
-        if (couponItem.getStatus().equals(CouponItemStatus.ENABLED)) {
-            couponItem.setStatus(CouponItemStatus.USED);
-            couponItemRepository.save(couponItem);
-        } else if(couponItem.getStatus().equals(CouponItemStatus.USED)) {
-            log.info("이미 사용된 쿠폰입니다.");
-        } else if(couponItem.getStatus().equals(CouponItemStatus.DISABLED)) {
-            log.info("만료된 쿠폰입니다.");
-        }
+        couponItem.useMyCoupon();
+        couponItemRepository.save(couponItem);
 
     }
 }

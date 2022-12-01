@@ -22,23 +22,15 @@ public class CouponServiceImpl implements CouponService {
 
     /*브랜드 쿠폰*/
     @Override /*TODO- Publish Type 추가*/
-    public String registerBrandCouponRequest(RegisterdRequestDto registerdRequestDto) {
+    public void registerBrandCouponRequest(RegisterdRequestDto registerdRequestDto) {
 
-        // RegisterdRequestDto을 Coupon으로 매핑
         ModelMapper modelMapper = new ModelMapper();
-
-        // 느슨한 매핑
         modelMapper.getConfiguration().setMatchingStrategy(MatchingStrategies.LOOSE);
+
         Coupon coupon = modelMapper.map(registerdRequestDto, Coupon.class);
-
-        // Coupon.setPermitSatus(PermitStatus.REQUESTED)
         coupon.setPermitStatus(PermitStatus.REQUESTED);
-
         couponRepository.save(coupon);
 
-        System.out.println(couponRepository.findAll());
-
-        return "success"; /*TODO: -품격 있게 수정*/
     }
 
     @Override
@@ -49,7 +41,6 @@ public class CouponServiceImpl implements CouponService {
 
 
 
-    /*프로모션 쿠폰*/
     @Override
     public void registerPromotionCoupon(String managerId) {
     }
