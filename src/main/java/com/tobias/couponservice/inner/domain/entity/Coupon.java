@@ -3,6 +3,7 @@ package com.tobias.couponservice.inner.domain.entity;
 import com.tobias.couponservice.inner.domain.entity.standardType.PermitStatus;
 import com.tobias.couponservice.inner.domain.entity.standardType.PublisherType;
 import com.tobias.couponservice.inner.domain.entity.standardType.Type;
+import com.tobias.couponservice.outer.dto.user.MyCouponDto;
 import lombok.*;
 import org.springframework.data.annotation.CreatedDate;
 
@@ -60,5 +61,7 @@ public class Coupon implements Serializable {
     private Date createdAt;
 
 
-
+    public void setId(MyCouponDto myCouponDto) {
+        this.id = myCouponDto.getCouponid();
+    }
 }

@@ -1,6 +1,7 @@
 package com.tobias.couponservice.inner.domain.entity;
 
 import com.tobias.couponservice.inner.domain.entity.standardType.CouponItemStatus;
+import com.tobias.couponservice.outer.dto.user.MyCouponDto;
 import lombok.*;
 
 import javax.persistence.*;
@@ -32,4 +33,10 @@ public class CouponItem implements Serializable {
     @Enumerated(EnumType.STRING)
     private CouponItemStatus status;
 
+
+    public CouponItem(MyCouponDto myCouponDto, Coupon coupon, CouponItemStatus couponItemStatus) {
+        this.userid = myCouponDto.getUserid();
+        this.coupon = coupon;
+        this.status = couponItemStatus;
+    }
 }
