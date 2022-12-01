@@ -39,4 +39,18 @@ public class CouponItem implements Serializable {
         this.coupon = coupon;
         this.status = couponItemStatus;
     }
+
+    public boolean isStatusEquals(CouponItemStatus enabled) {
+        return this.status.equals(enabled);
+    }
+
+    public void useMyCoupon() {
+        if (this.status.equals(CouponItemStatus.ENABLED)) {
+            this.status = CouponItemStatus.USED;
+        } else if(this.status.equals(CouponItemStatus.USED)) {
+            throw new RuntimeException("이미 사용된 쿠폰입니다.");
+        } else if(this.status.equals(CouponItemStatus.DISABLED)) {
+            throw new RuntimeException("만료된 쿠폰입니다.");
+        }
+    }
 }

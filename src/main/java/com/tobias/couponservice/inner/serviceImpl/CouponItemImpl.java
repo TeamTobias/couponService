@@ -43,15 +43,8 @@ public class CouponItemImpl implements CouponItemService {
     public void useMyCoupon(String userid, Long couponItemId) {
 
         CouponItem couponItem = couponItemRepository.findByUseridAndCoupon(userid, Coupon.builder().id(couponItemId).build());
-
-        if (couponItem.getStatus().equals(CouponItemStatus.ENABLED)) {
-            couponItem.setStatus(CouponItemStatus.USED);
-            couponItemRepository.save(couponItem);
-        } else if(couponItem.getStatus().equals(CouponItemStatus.USED)) {
-            log.info("이미 사용된 쿠폰입니다.");
-        } else if(couponItem.getStatus().equals(CouponItemStatus.DISABLED)) {
-            log.info("만료된 쿠폰입니다.");
-        }
+        couponItem.useMyCoupon();
+        couponItemRepository.save(couponItem);
 
     }
 }
