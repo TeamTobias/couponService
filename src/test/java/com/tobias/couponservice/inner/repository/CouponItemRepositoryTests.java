@@ -15,7 +15,7 @@ import org.springframework.test.annotation.Commit;
 
 import java.util.Date;
 
-@Profile("test")
+@Profile("dev")
 @SpringBootTest
 public class CouponItemRepositoryTests {
 

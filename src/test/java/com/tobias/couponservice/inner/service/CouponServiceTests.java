@@ -11,10 +11,12 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.annotation.Description;
+import org.springframework.context.annotation.Profile;
 import org.springframework.test.annotation.Commit;
 
 import java.util.Date;
 
+@Profile("dev")
 @SpringBootTest
 public class CouponServiceTests {
 

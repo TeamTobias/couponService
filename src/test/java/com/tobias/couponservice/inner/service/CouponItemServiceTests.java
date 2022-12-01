@@ -19,7 +19,7 @@ import org.springframework.context.annotation.Profile;
 import org.springframework.test.annotation.Commit;
 
 
-@Profile("test")
+@Profile("dev")
 @SpringBootTest
 public class CouponItemServiceTests {
 
