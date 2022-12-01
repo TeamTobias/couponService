@@ -3,6 +3,7 @@ package com.tobias.couponservice.inner.domain.entity;
 import com.tobias.couponservice.inner.domain.entity.standardType.PermitStatus;
 import com.tobias.couponservice.inner.domain.entity.standardType.PublisherType;
 import com.tobias.couponservice.inner.domain.entity.standardType.Type;
+import com.tobias.couponservice.outer.dto.brand.RegisterdRequestDto;
 import com.tobias.couponservice.outer.dto.user.MyCouponDto;
 import lombok.*;
 import org.springframework.data.annotation.CreatedDate;

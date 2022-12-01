@@ -21,7 +21,7 @@ public interface CouponService {
 
 
     /*판매자 쿠폰 등록 요청*/
-    String registerBrandCouponRequest(RegisterdRequestDto registerdRequestDto);
+    void registerBrandCouponRequest(RegisterdRequestDto registerdRequestDto);
 
     /*판매자 쿠폰 조회*/
     List<Coupon> findBrandCoupon(String brandId);
