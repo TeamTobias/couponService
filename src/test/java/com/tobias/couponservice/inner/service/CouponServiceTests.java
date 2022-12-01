@@ -27,32 +27,32 @@ class CouponServiceTests {
     private CouponService couponService;
 
 
-    /*판매자 쿠폰 등록 요청*/
-    @Test
-    @Commit
-    @Description("판매자 쿠폰 등록 요청")
-    void registerBrandCouponRequest() {
-        // BrandCouponRequestDto Builder
-        RegisterdRequestDto registerdRequestDto = RegisterdRequestDto.builder()
-                .brandid("1234")
-                .openDate(new Date())
-                .endDate(new Date())
-                .content("쿠폰 내용")
-                .type("PERCENTAG")
-                .discountAmount(1000)
-                .leastAmount(5000)
-                .build();
-
-        // BrandCouponRequestService.registerBrandCouponRequest(RegisterdRequestDto)
-        couponService.registerBrandCouponRequest(registerdRequestDto);
-
-        // if couponrepository.finlast.status  == PermitStatus.REQUESTED true
-        if (couponRepository.findCouponByOrderByCreatedAt().getPermitStatus().equals(PermitStatus.REQUESTED)) {
-            Assertions.assertTrue(true);
-        } else {
-            Assertions.fail();
-        }
-    }
+//    /*판매자 쿠폰 등록 요청*/
+//    @Test
+//    @Commit
+//    @Description("판매자 쿠폰 등록 요청")
+//    void registerBrandCouponRequest() {
+//        // BrandCouponRequestDto Builder
+//        RegisterdRequestDto registerdRequestDto = RegisterdRequestDto.builder()
+//                .brandid("1234")
+//                .openDate(new Date())
+//                .endDate(new Date())
+//                .content("쿠폰 내용")
+//                .type("PERCENTAG")
+//                .discountAmount(1000)
+//                .leastAmount(5000)
+//                .build();
+//
+//        // BrandCouponRequestService.registerBrandCouponRequest(RegisterdRequestDto)
+//        couponService.registerBrandCouponRequest(registerdRequestDto);
+//
+//        // if couponrepository.finlast.status  == PermitStatus.REQUESTED true
+//        if (couponRepository.findCouponByOrderByCreatedAt().getPermitStatus().equals(PermitStatus.REQUESTED)) {
+//            Assertions.assertTrue(true);
+//        } else {
+//            Assertions.fail();
+//        }
+//    }
 
 
 
