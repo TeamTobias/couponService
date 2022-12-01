@@ -18,7 +18,7 @@ import java.util.Date;
 
 @Profile("dev")
 @SpringBootTest
-public class CouponServiceTests {
+class CouponServiceTests {
 
     @Autowired
     private CouponRepository couponRepository;
@@ -31,7 +31,7 @@ public class CouponServiceTests {
     @Test
     @Commit
     @Description("판매자 쿠폰 등록 요청")
-    public void registerBrandCouponRequest() {
+    void registerBrandCouponRequest() {
         // BrandCouponRequestDto Builder
         RegisterdRequestDto registerdRequestDto = RegisterdRequestDto.builder()
                 .brandid("1234")
@@ -59,7 +59,7 @@ public class CouponServiceTests {
     /*판매자 쿠폰 조회*/
     @Test
     @Description("판매자 쿠폰 조회")
-    public void findBrandCoupon() {
+    void findBrandCoupon() {
         // 쿠폰 엔티티 builder (brandid = “1”, PublisherType = Brand)
         Coupon coupon = Coupon.builder()
                 .brandid("1")
@@ -128,18 +128,18 @@ public class CouponServiceTests {
 
 
 
-    /*프로모션 쿠폰 등록*/
-    @Test
-    @Description("프로모션 쿠폰 등록")
-    private void registerPromotionCoupon() {
-
-
-    }
-
-    /*프로모션 쿠폰 조회*/
-    @Test
-    @Description("프로모션 쿠폰 등록")
-    private void findPromotionCoupon() {
-
-    }
+//    /*프로모션 쿠폰 등록*/
+//    @Test
+//    @Description("프로모션 쿠폰 등록")
+//    void registerPromotionCoupon() {
+//
+//
+//    }
+//
+//    /*프로모션 쿠폰 조회*/
+//    @Test
+//    @Description("프로모션 쿠폰 등록")
+//    void findPromotionCoupon() {
+//
+//    }
 }
