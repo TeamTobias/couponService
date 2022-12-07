@@ -16,7 +16,7 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class RegisterdRequestDto {
+public class BrandCouponRequest {
 
     //- 판매자 일련번호
     private String brandid;

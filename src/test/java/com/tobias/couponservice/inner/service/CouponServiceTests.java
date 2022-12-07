@@ -7,14 +7,12 @@ import com.tobias.couponservice.inner.domain.entity.standardType.PublisherType;
 import com.tobias.couponservice.inner.domain.entity.standardType.Type;
 import com.tobias.couponservice.inner.domain.vo.ConditionVo;
 import com.tobias.couponservice.inner.repository.CouponRepository;
-import com.tobias.couponservice.outer.dto.brand.RegisterdRequestDto;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.annotation.Description;
 import org.springframework.context.annotation.Profile;
-import org.springframework.test.annotation.Commit;
 
 import java.util.Date;
 

@@ -5,7 +5,7 @@ import com.tobias.couponservice.inner.domain.entity.standardType.PermitStatus;
 import com.tobias.couponservice.inner.domain.entity.standardType.PublisherType;
 import com.tobias.couponservice.inner.repository.CouponRepository;
 import com.tobias.couponservice.inner.service.CouponService;
-import com.tobias.couponservice.outer.dto.brand.RegisterdRequestDto;
+import com.tobias.couponservice.outer.dto.brand.BrandCouponRequest;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.convention.MatchingStrategies;
@@ -20,13 +20,14 @@ public class CouponServiceImpl implements CouponService {
     private final CouponRepository couponRepository;
 
 
+
     /*브랜드 쿠폰*/
     @Override /*TODO- Publish Type 추가*/
-    public void registerBrandCouponRequest(RegisterdRequestDto registerdRequestDto) {
+    public void registerBrandCouponRequest(BrandCouponRequest registerdRequestDto) {
 
         ModelMapper modelMapper = new ModelMapper();
         modelMapper.getConfiguration().setMatchingStrategy(MatchingStrategies.LOOSE);
-
+        
         Coupon coupon = modelMapper.map(registerdRequestDto, Coupon.class);
         coupon.setPermitStatus(PermitStatus.REQUESTED);
         couponRepository.save(coupon);
@@ -40,7 +41,7 @@ public class CouponServiceImpl implements CouponService {
 
 
     @Override
-    public void registerPromotionCoupon(String managerId) {
+    public void promotionCouponRequest(String managerId) {
     }
 
     @Override
