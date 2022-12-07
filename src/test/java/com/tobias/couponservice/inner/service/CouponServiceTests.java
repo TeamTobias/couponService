@@ -1,9 +1,11 @@
 package com.tobias.couponservice.inner.service;
 
 import com.tobias.couponservice.inner.domain.entity.Coupon;
+import com.tobias.couponservice.inner.domain.entity.PublisherVo;
 import com.tobias.couponservice.inner.domain.entity.standardType.PermitStatus;
 import com.tobias.couponservice.inner.domain.entity.standardType.PublisherType;
 import com.tobias.couponservice.inner.domain.entity.standardType.Type;
+import com.tobias.couponservice.inner.domain.vo.ConditionVo;
 import com.tobias.couponservice.inner.repository.CouponRepository;
 import com.tobias.couponservice.outer.dto.brand.RegisterdRequestDto;
 import org.junit.jupiter.api.Assertions;
@@ -55,6 +57,26 @@ class CouponServiceTests {
 //    }
 
 
+    private static Coupon createCoupon() {
+
+        return Coupon.builder()
+                .content("쿠폰 내용")
+                .type(Type.PERCENTAG)
+                .discountAmount(1000)
+                .publisherVo(PublisherVo.builder()
+                        .brandid("1234")
+                        .publisherType(PublisherType.BRAND)
+                        .permitStatus(PermitStatus.PERMIT)
+                        .managerid("1234")
+                        .build())
+                .conditionVo(ConditionVo.builder()
+                        .leastAmount(5000)
+                        .openDate(new Date())
+                        .endDate(new Date())
+                        .build())
+                .build();
+
+    }
 
     /*판매자 쿠폰 조회*/
     @Test
@@ -62,15 +84,20 @@ class CouponServiceTests {
     void findBrandCoupon() {
         // 쿠폰 엔티티 builder (brandid = “1”, PublisherType = Brand)
         Coupon coupon = Coupon.builder()
-                .brandid("1")
-                .publisherType(PublisherType.valueOf("BRAND"))
-                .openDate(new Date())
-                .endDate(new Date())
                 .content("쿠폰 내용")
-                .type(Type.valueOf("PERCENTAG"))
+                .type(Type.PERCENTAG)
                 .discountAmount(1000)
-                .leastAmount(5000)
-                .permitStatus(PermitStatus.REQUESTED)
+                .publisherVo(PublisherVo.builder()
+                        .brandid("1")
+                        .publisherType(PublisherType.BRAND)
+                        .permitStatus(PermitStatus.PERMIT)
+                        .managerid("1234")
+                        .build())
+                .conditionVo(ConditionVo.builder()
+                        .leastAmount(5000)
+                        .openDate(new Date())
+                        .endDate(new Date())
+                        .build())
                 .build();
 
         // couponRepository Save
@@ -78,15 +105,20 @@ class CouponServiceTests {
 
         // 쿠폰 엔티티 builder  (brandid = “2”, PublisherType = Brand)
         Coupon coupon2 = Coupon.builder()
-                .brandid("2")
-                .publisherType(PublisherType.valueOf("BRAND"))
-                .openDate(new Date())
-                .endDate(new Date())
                 .content("쿠폰 내용")
-                .type(Type.valueOf("PERCENTAG"))
+                .type(Type.PERCENTAG)
                 .discountAmount(1000)
-                .leastAmount(5000)
-                .permitStatus(PermitStatus.REQUESTED)
+                .publisherVo(PublisherVo.builder()
+                        .brandid("2")
+                        .publisherType(PublisherType.BRAND)
+                        .permitStatus(PermitStatus.PERMIT)
+                        .managerid("1234")
+                        .build())
+                .conditionVo(ConditionVo.builder()
+                        .leastAmount(5000)
+                        .openDate(new Date())
+                        .endDate(new Date())
+                        .build())
                 .build();
 
         // couponRepository Save
@@ -94,15 +126,20 @@ class CouponServiceTests {
 
         // 쿠폰 엔티티 builder  (brandid = “3”, PublisherType = MANAGER)
         Coupon coupon3 = Coupon.builder()
-                .brandid("3")
-                .publisherType(PublisherType.valueOf("MANAGER"))
-                .openDate(new Date())
-                .endDate(new Date())
                 .content("쿠폰 내용")
-                .type(Type.valueOf("PERCENTAG"))
+                .type(Type.PERCENTAG)
                 .discountAmount(1000)
-                .leastAmount(5000)
-                .permitStatus(PermitStatus.REQUESTED)
+                .publisherVo(PublisherVo.builder()
+                        .brandid("3")
+                        .publisherType(PublisherType.BRAND)
+                        .permitStatus(PermitStatus.PERMIT)
+                        .managerid("1234")
+                        .build())
+                .conditionVo(ConditionVo.builder()
+                        .leastAmount(5000)
+                        .openDate(new Date())
+                        .endDate(new Date())
+                        .build())
                 .build();
 
         //couponRepository Save

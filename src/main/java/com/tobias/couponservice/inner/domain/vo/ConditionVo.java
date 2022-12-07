@@ -1,6 +1,9 @@
 package com.tobias.couponservice.inner.domain.vo;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.CreatedDate;
 
 import javax.persistence.Embeddable;
@@ -9,6 +12,9 @@ import java.util.Date;
 
 @Data
 @Embeddable
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class ConditionVo implements Serializable {
 
 

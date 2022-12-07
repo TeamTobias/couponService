@@ -1,5 +1,7 @@
 package com.tobias.couponservice.inner.domain.entity;
 
+import com.tobias.couponservice.inner.domain.entity.standardType.PermitStatus;
+import com.tobias.couponservice.inner.domain.entity.standardType.PublisherType;
 import com.tobias.couponservice.inner.domain.entity.standardType.Type;
 import com.tobias.couponservice.inner.domain.vo.ConditionVo;
 import lombok.*;
@@ -37,5 +39,19 @@ public class Coupon implements Serializable {
 
     public void getCoupon(long couponid) {
         this.id = couponid;
+    }
+
+
+
+    public String getBrandid() {
+        return this.publisherVo.getBrandid();
+    }
+
+    public PublisherType getPublisherType() {
+        return this.publisherVo.getPublisherType();
+    }
+
+    public void setPermitStatus(PermitStatus requested) {
+        this.publisherVo.setPermitStatus(requested);
     }
 }

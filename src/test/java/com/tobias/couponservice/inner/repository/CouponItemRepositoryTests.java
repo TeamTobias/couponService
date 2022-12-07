@@ -2,9 +2,11 @@ package com.tobias.couponservice.inner.repository;
 
 import com.tobias.couponservice.inner.domain.entity.CouponItem;
 import com.tobias.couponservice.inner.domain.entity.Coupon;
+import com.tobias.couponservice.inner.domain.entity.PublisherVo;
 import com.tobias.couponservice.inner.domain.entity.standardType.PermitStatus;
 import com.tobias.couponservice.inner.domain.entity.standardType.PublisherType;
 import com.tobias.couponservice.inner.domain.entity.standardType.Type;
+import com.tobias.couponservice.inner.domain.vo.ConditionVo;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,13 +38,20 @@ public class CouponItemRepositoryTests {
     void saveCouponItem() {
 
         Coupon coupon = Coupon.builder()
-                .publisherType(PublisherType.BRAND)
-                .permitStatus(PermitStatus.PERMIT)
-                .content("content")
+                .content("쿠폰 내용")
                 .type(Type.PERCENTAG)
-                .leastAmount(1000)
-                .openDate(new Date())
-                .endDate(new Date())
+                .discountAmount(1000)
+                .publisherVo(PublisherVo.builder()
+                        .brandid("1234")
+                        .publisherType(PublisherType.BRAND)
+                        .permitStatus(PermitStatus.PERMIT)
+                        .managerid("1234")
+                        .build())
+                .conditionVo(ConditionVo.builder()
+                        .leastAmount(5000)
+                        .openDate(new Date())
+                        .endDate(new Date())
+                        .build())
                 .build();
 
         couponRepository.save(coupon);
