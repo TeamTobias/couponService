@@ -62,7 +62,7 @@ public class Coupon implements Serializable {
     private Date createdAt;
 
 
-    public void setId(MyCouponDto myCouponDto) {
-        this.id = myCouponDto.getCouponid();
+    public void getCoupon(long couponid) {
+        this.id = couponid;
     }
 }

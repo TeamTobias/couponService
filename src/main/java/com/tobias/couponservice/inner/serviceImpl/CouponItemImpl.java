@@ -23,7 +23,7 @@ public class CouponItemImpl implements CouponItemService {
     @Override
     public void saveMyCoupon(MyCouponDto myCouponDto) {
         Coupon coupon = new Coupon();
-        coupon.setId(myCouponDto);
+        coupon.getCoupon(myCouponDto.getCouponid());
 
         if (couponItemRepository.existsByUseridAndCoupon(myCouponDto.getUserid(), coupon))
              throw new RuntimeException("이미 등록된 쿠폰입니다.");
