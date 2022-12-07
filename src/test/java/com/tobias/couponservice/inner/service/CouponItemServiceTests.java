@@ -1,22 +1,11 @@
 package com.tobias.couponservice.inner.service;
 
-import com.tobias.couponservice.inner.domain.entity.Coupon;
-import com.tobias.couponservice.inner.domain.entity.CouponItem;
-import com.tobias.couponservice.inner.domain.entity.standardType.CouponItemStatus;
-import com.tobias.couponservice.inner.domain.entity.standardType.PermitStatus;
-import com.tobias.couponservice.inner.domain.entity.standardType.PublisherType;
 import com.tobias.couponservice.inner.repository.CouponItemRepository;
 import com.tobias.couponservice.inner.repository.CouponRepository;
-import com.tobias.couponservice.outer.dto.user.MyCouponDto;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.context.annotation.Description;
 import org.springframework.context.annotation.Profile;
-import org.springframework.test.annotation.Commit;
 
 
 @Profile("local")
@@ -58,18 +47,22 @@ public class CouponItemServiceTests {
 //    @Test
 //    void saveMyCoupon() {
 //
-//        couponItemService.saveMyCoupon(MyCouponDto.builder()
-//                .userid("1")
-//                .couponid("1")
-//                .build());
+//        Coupon coupon = Coupon.builder().id(1L).build();
+//        couponRepository.save(coupon);
 //
 //
 //        couponItemService.saveMyCoupon(MyCouponDto.builder()
 //                .userid("1")
 //                .couponid("1")
 //                .build());
-//
-//    }
+
+
+//        couponItemService.saveMyCoupon(MyCouponDto.builder()
+//                .userid("1")
+//                .couponid("1")
+//                .build());
+
+    }
 
 //
 //    /*내 쿠폰 조회*/
