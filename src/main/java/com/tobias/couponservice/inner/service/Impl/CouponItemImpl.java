@@ -3,6 +3,7 @@ package com.tobias.couponservice.inner.service.Impl;
 import com.tobias.couponservice.inner.domain.Coupon;
 import com.tobias.couponservice.inner.domain.CouponItem;
 import com.tobias.couponservice.inner.domain.standardType.CouponItemStatus;
+import com.tobias.couponservice.outer.dto.SaveMyCouponRequest;
 import com.tobias.couponservice.outer.repository.CouponItemRepository;
 import com.tobias.couponservice.inner.service.CouponItemService;
 import lombok.RequiredArgsConstructor;

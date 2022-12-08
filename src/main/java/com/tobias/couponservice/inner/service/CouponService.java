@@ -8,16 +8,16 @@ import java.util.List;
 
 public interface CouponService {
 
-    public void brandCouponRequest(BrandCouponRequest brandCouponRequest);
+    void brandCouponRequest(BrandCouponRequest brandCouponRequest);
 
-    public List<Coupon> findBrandCoupon(String brandId);
+    List<Coupon> findBrandCoupon(String brandId);
 
-    public void promotionCouponRequest(PromotionCouponRequest promotionCouponRequest);
+    void promotionCouponRequest(PromotionCouponRequest promotionCouponRequest);
 
-    public void brandCouponPermit(long couponid, long managerid);
+    void brandCouponPermit(long couponid, long managerid);
 
-    public List<BrandCouponRequestRes> findBrandCouponRequest();
+    List<BrandCouponRequestRes> findBrandCouponRequest();
 
-    public List<FindCouponRes> findCoupon();
+    List<FindCouponRes> findCoupon();
 
 }

@@ -1,7 +1,7 @@
 package com.tobias.couponservice.inner.domain;
 
 import com.tobias.couponservice.inner.domain.standardType.CouponItemStatus;
-import com.tobias.couponservice.outer.dto.user.MyCouponDto;
+import com.tobias.couponservice.outer.dto.SaveMyCouponRequest;
 import lombok.*;
 
 import javax.persistence.*;
@@ -34,7 +34,7 @@ public class CouponItem implements Serializable {
     private CouponItemStatus status;
 
 
-    public CouponItem(MyCouponDto myCouponDto, Coupon coupon, CouponItemStatus couponItemStatus) {
+    public CouponItem(SaveMyCouponRequest myCouponDto, Coupon coupon, CouponItemStatus couponItemStatus) {
         this.userid = myCouponDto.getUserid();
         this.coupon = coupon;
         this.status = couponItemStatus;
