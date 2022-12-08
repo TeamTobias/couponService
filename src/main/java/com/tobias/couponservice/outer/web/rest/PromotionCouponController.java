@@ -1,9 +1,5 @@
 package com.tobias.couponservice.outer.web.rest;
 
-import com.tobias.couponservice.outer.vo.ResponseMessage;
-import com.tobias.couponservice.outer.vo.coupon.GetPromotionCouponResponse;
-import com.tobias.couponservice.outer.vo.coupon.PostPromotionCouponRequest;
-import com.tobias.couponservice.outer.vo.couponItem.getCouponItemAndUseridResponse;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.ArraySchema;
 import io.swagger.v3.oas.annotations.media.Content;
