@@ -1,12 +1,16 @@
 package com.tobias.couponservice.outer.dto;
 
+import lombok.Data;
 
-/**
- * @author ur2ku
- * @version 1.0
- * @created 08-12-2022 ���� 7:30:34
- */
+import java.util.Date;
+
+@Data
 public class PromotionCouponRequest {
-
-
+    private String managerid;
+    private Date openDate;
+    private Date endDate;
+    private String content;
+    private String type;
+    private int discountAmount;
+    private int leastAmount;
 }
