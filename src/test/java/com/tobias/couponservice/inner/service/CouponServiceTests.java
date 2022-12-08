@@ -144,7 +144,7 @@ class CouponServiceTests {
         couponRepository.save(coupon3);
 
         // if each (Coupon Brandid == brandCouponService.findBrandCoupon(“1”)) && (PublisherType.BRAND == brandCouponService.findBrandCoupon(“1”)) true;
-        for (Coupon coupon1 : couponService.findBrandCoupon("1")) {
+        for (Coupon coupon1 : couponService.findBrandCoupon(Long.parseLong("1"))) {
             if (coupon1.getBrandid() == 1L && coupon1.getPublisherType().equals(PublisherType.BRAND)) {
                 Assertions.assertTrue(true);
             } else {

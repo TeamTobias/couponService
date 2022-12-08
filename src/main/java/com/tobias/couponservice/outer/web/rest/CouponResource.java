@@ -1,14 +1,9 @@
 package com.tobias.couponservice.outer.web.rest;
 
-����ũ�μ���.coupon.outer.web;
+import com.tobias.couponservice.outer.dto.FindCouponRes;
 
-import ����ũ�μ���.coupon.inner.Impl.CouponServiceImpl;
+import java.util.List;
 
-/**
- * @author ur2ku
- * @version 1.0
- * @created 08-12-2022 ���� 7:45:32
- */
 public class CouponResource {
 
 	public CouponResource(){

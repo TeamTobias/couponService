@@ -30,7 +30,7 @@ public class CouponItemRepositoryTests {
     // set profile test
     @BeforeAll
     public static void setProfile() {
-        System.setProperty("spring.profiles.active", "test");
+        System.setProperty("spring.profiles.active", "local");
     }
 
 
@@ -44,15 +44,17 @@ public class CouponItemRepositoryTests {
                 .type(Type.PERCENTAG)
                 .discountAmount(1000)
                 .publisherVo(PublisherVo.builder()
-                        .brandid("1234")
+                        .brandid(2L)
                         .publisherType(PublisherType.BRAND)
                         .permitStatus(PermitStatus.PERMIT)
-                        .managerid("1234")
+                        .managerid(1L)
                         .build())
                 .conditionVo(ConditionVo.builder()
                         .leastAmount(5000)
-                        .openDate(new Date())
-                        .endDate(new Date())
+                        // 2022-10-12
+                        .openDate(new Date(1634032000000L))
+                        // 2022-12-24
+                        .endDate(new Date(1640345600000L))
                         .build())
                 .build();
 

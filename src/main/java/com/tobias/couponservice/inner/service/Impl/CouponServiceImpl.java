@@ -15,6 +15,7 @@ import org.modelmapper.convention.MatchingStrategies;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -32,23 +33,33 @@ public class CouponServiceImpl implements CouponService {
     }
 
     @Override
-    public List<Coupon> findBrandCoupon(String brandId) {
-        return couponRepository.findByBrandidAndPublisherType(brandId, PublisherType.BRAND);
+    public List<Coupon> findBrandCoupon(long brandId) {
+        return couponRepository.findByPublisherVo_BrandidAndPublisherVo_PublisherType(brandId, PublisherType.BRAND);
     }
+
 
     @Override
     public void promotionCouponRequest(PromotionCouponRequest promotionCouponRequest) {
+        ModelMapper modelMapper = new ModelMapper();
+        Coupon coupon = modelMapper.map(promotionCouponRequest, Coupon.class);
 
+        coupon.setPermitStatus(PermitStatus.PERMIT);
+        couponRepository.save(coupon);
     }
 
     @Override
     public void brandCouponPermit(long couponid, long managerid) {
-
+        Optional<Coupon> coupon = couponRepository.findById(couponid);
+        coupon.ifPresent(coupon1 -> {
+            coupon1.setPermitStatus(PermitStatus.PERMIT);
+            coupon1.setManagerid(managerid);
+            couponRepository.save(coupon1);
+        });
     }
 
     @Override
     public List<BrandCouponRequestRes> findBrandCouponRequest() {
-
+        // TODO: 2022-12-08
         return null;
     }
 

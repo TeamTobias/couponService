@@ -1,6 +1,7 @@
 package com.tobias.couponservice.outer.web.rest;
 
 import com.tobias.couponservice.outer.dto.FindMyCouponDetailResponse;
+import com.tobias.couponservice.outer.dto.ResponseMessage;
 import com.tobias.couponservice.outer.dto.SaveMyCouponRequest;
 import io.swagger.v3.oas.annotations.media.ArraySchema;
 import io.swagger.v3.oas.annotations.media.Content;

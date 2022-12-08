@@ -10,7 +10,7 @@ public interface CouponService {
 
     void brandCouponRequest(BrandCouponRequest brandCouponRequest);
 
-    List<Coupon> findBrandCoupon(String brandId);
+    List<Coupon> findBrandCoupon(long brandId);
 
     void promotionCouponRequest(PromotionCouponRequest promotionCouponRequest);
 
