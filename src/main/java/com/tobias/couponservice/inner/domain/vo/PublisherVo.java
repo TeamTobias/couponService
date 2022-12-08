@@ -1,7 +1,7 @@
-package com.tobias.couponservice.inner.domain.entity;
+package com.tobias.couponservice.inner.domain.vo;
 
-import com.tobias.couponservice.inner.domain.entity.standardType.PermitStatus;
-import com.tobias.couponservice.inner.domain.entity.standardType.PublisherType;
+import com.tobias.couponservice.inner.domain.standardType.PermitStatus;
+import com.tobias.couponservice.inner.domain.standardType.PublisherType;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -24,13 +24,17 @@ public class PublisherVo implements Serializable {
     private PublisherType publisherType;
 
     /*브랜드 일련 번호*/
-    private String brandid;
+    private long brandid;
+
+    /*브랜드 이름*/
+    private String brandname;
+
+    /*쿠폰 인가 직원 일련 번호*/
+    private long managerid;
 
     /*쿠폰 인가 상태*/
     @Enumerated(EnumType.STRING)
     private PermitStatus permitStatus;
 
-    /*쿠폰 인가 직원 일련 번호*/
-    private String managerid;
 
 }
