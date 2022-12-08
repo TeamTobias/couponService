@@ -1,11 +1,10 @@
-package com.tobias.couponservice.outer.dto; ����ũ�μ���.coupon.outer.dto;
+package com.tobias.couponservice.outer.dto;
 
+import lombok.Data;
 
-/**
- * @author ur2ku
- * @version 1.0
- * @created 08-12-2022 ���� 7:30:33
- */
+import java.util.Date;
+
+@Data
 public class BrandCouponRequest {
 
 	private String brandid;
@@ -17,12 +16,5 @@ public class BrandCouponRequest {
 	private int discountAmount;
 	private int leastAmount;
 
-	public BrandCouponRequest(){
-
-	}
-
-	public void finalize() throws Throwable {
-
-	}
 
 }

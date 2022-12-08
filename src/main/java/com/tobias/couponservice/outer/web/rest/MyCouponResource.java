@@ -1,46 +1,40 @@
 package com.tobias.couponservice.outer.web.rest;
 
-����ũ�μ���.coupon.outer.web;
+import com.tobias.couponservice.outer.dto.FindMyCouponDetailResponse;
+import com.tobias.couponservice.outer.dto.SaveMyCouponRequest;
+import io.swagger.v3.oas.annotations.media.ArraySchema;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-import ����ũ�μ���.coupon.outer.dto.SaveMyCouponRequest;
-import ����ũ�μ���.coupon.inner.Impl.CouponItemServiceImpl;
+import java.util.List;
 
-/**
- * @author ur2ku
- * @version 1.0
- * @created 08-12-2022 ���� 7:45:33
- */
+@RestController
+@RequestMapping("/myCoupon")
 public class MyCouponResource {
 
-	public MyCouponResource(){
-
-	}
-
-	public void finalize() throws Throwable {
-
-	}
-
-	/**
-	 * 
-	 * @param saveMyCouponRequest
-	 */
+	@ApiResponse(responseCode = "200", content = @Content(mediaType = "application/json", schema = @Schema(implementation = ResponseMessage.class)))
+	@PostMapping("/v1/{userid}/{couponid}")
 	public ResponseEntity saveMyCoupon(SaveMyCouponRequest saveMyCouponRequest){
 		return null;
 	}
 
-	/**
-	 * 
-	 * @param userid
-	 */
+
+	@ApiResponse(responseCode = "200", content = @Content(mediaType = "application/json", array = @ArraySchema(schema = @Schema(implementation = FindMyCouponDetailResponse.class))))
+	@PostMapping("/v1/{userid}")
 	public ResponseEntity<List<FindMyCouponDetailResponse>> findMyCoupon(String userid){
 		return null;
 	}
 
-	/**
-	 * 
-	 * @param userid
-	 * @param couponItemId
-	 */
+
+
+	@ApiResponse(responseCode = "200")
+	@PutMapping("/v1/{userid}/{couponid}")
 	public ResponseEntity useMyCoupon(String userid, Long couponItemId){
 		return null;
 	}

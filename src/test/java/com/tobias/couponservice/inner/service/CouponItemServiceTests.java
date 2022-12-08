@@ -3,7 +3,6 @@ package com.tobias.couponservice.inner.service;
 import com.tobias.couponservice.inner.domain.Coupon;
 import com.tobias.couponservice.outer.repository.CouponItemRepository;
 import com.tobias.couponservice.outer.repository.CouponRepository;
-import com.tobias.couponservice.outer.dto.user.MyCouponDto;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeAll;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -70,14 +69,14 @@ public class CouponItemServiceTests {
     @Commit
     @Test
     void saveMyCoupon() {
-        Coupon coupon = Coupon.builder().id(1L).build();
-        couponRepository.save(coupon);
-
-
-        couponItemService.saveMyCoupon(MyCouponDto.builder()
-                .userid("1")
-                .couponid("1")
-                .build());
+//        Coupon coupon = Coupon.builder().id(1L).build();
+//        couponRepository.save(coupon);
+//
+//
+//        couponItemService.saveMyCoupon(MyCouponDto.builder()
+//                .userid("1")
+//                .couponid("1")
+//                .build());
 
 
 //        couponItemService.saveMyCoupon(MyCouponDto.builder()

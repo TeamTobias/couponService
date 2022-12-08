@@ -31,15 +31,12 @@ public class CouponItemImpl implements CouponItemService {
 
     @Override
     public List<CouponItem> findMyCoupon(String userid) {
-
         return couponItemRepository.findByUseridAndStatus(userid, CouponItemStatus.ENABLED);
-
     }
 
 
     @Override
     public void useMyCoupon(String userid, Long couponItemId) {
-
         CouponItem couponItem = couponItemRepository.findByUseridAndCoupon(userid, Coupon.builder().id(couponItemId).build());
         couponItem.useMyCoupon();
         couponItemRepository.save(couponItem);

@@ -1,4 +1,4 @@
-package com.tobias.couponservice.outer.dto; ����ũ�μ���.coupon.outer.dto;
+package com.tobias.couponservice.outer.dto;
 
 
 /**
@@ -8,12 +8,5 @@ package com.tobias.couponservice.outer.dto; ����ũ�μ���.coupon.
  */
 public class PromotionCouponRequest {
 
-	public PromotionCouponRequest(){
-
-	}
-
-	public void finalize() throws Throwable {
-
-	}
 
 }

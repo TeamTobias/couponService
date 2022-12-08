@@ -1,11 +1,11 @@
-package com.tobias.couponservice.outer.dto; ����ũ�μ���.coupon.outer.dto;
+package com.tobias.couponservice.outer.dto;
 
+import com.tobias.couponservice.inner.domain.standardType.Type;
+import lombok.Data;
 
-/**
- * @author ur2ku
- * @version 1.0
- * @created 08-12-2022 ���� 7:30:33
- */
+import java.util.Date;
+
+@Data
 public class BrandCouponRequestRes {
 
 	private long id;
@@ -19,12 +19,5 @@ public class BrandCouponRequestRes {
 	private Date endDate;
 	private Date createdAt;
 
-	public BrandCouponRequestRes(){
-
-	}
-
-	public void finalize() throws Throwable {
-
-	}
 
 }

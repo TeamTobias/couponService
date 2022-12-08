@@ -1,38 +1,31 @@
 package com.tobias.couponservice.outer.web.rest;
 
-����ũ�μ���.coupon.outer.web;
+import com.tobias.couponservice.outer.dto.BrandCouponRequest;
+import com.tobias.couponservice.outer.dto.FindCouponRes;
+import com.tobias.couponservice.outer.dto.ResponseMessage;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
-import ����ũ�μ���.coupon.inner.Impl.CouponServiceImpl;
+import java.util.List;
 
-/**
- * @author ur2ku
- * @version 1.0
- * @created 08-12-2022 ���� 7:45:32
- */
+@RestController
+@RequestMapping("/brandCoupon")
 public class BrandCouponResource {
 
-	public BrandCouponResource(){
 
-	}
+    @ApiResponse(responseCode = "200", content = @Content(mediaType = "application/json", schema = @Schema(implementation = ResponseMessage.class)))
+    @PostMapping("/v1")
+    public ResponseEntity brandCouponRequest(@RequestBody BrandCouponRequest brandCouponRequest) {
+        return null;
+    }
 
-	public void finalize() throws Throwable {
 
-	}
-
-	/**
-	 * 
-	 * @param brandCouponRequest
-	 */
-	public void brandCouponRequest(BrandCouponRequest brandCouponRequest){
-
-	}
-
-	/**
-	 * 
-	 * @param brandId
-	 */
-	public List<Coupon> findBrandCoupon(String brandId){
-		return null;
-	}
+//    @ApiResponse(responseCode = "200", content = @Content(mediaType = "application/json", schema = @Schema(implementation = ResponseMessage.class)))
+    public ResponseEntity<List<FindCouponRes>> findBrandCoupon(@PathVariable("brandid") String brandid) {
+        return null;
+    }
 
 }

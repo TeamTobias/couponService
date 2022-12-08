@@ -6,7 +6,6 @@ import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.parameters.RequestBody;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
-import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -18,9 +17,7 @@ public class BrandCouponController {
 
 
     @Operation(summary= "브랜드 쿠폰 등록 요청", tags = "브랜드 쿠폰")
-    @ApiResponses({
-            @ApiResponse(responseCode = "200", content = @Content(mediaType = "application/json", schema = @Schema(implementation = ResponseMessage.class))),
-    })
+    @ApiResponse(responseCode = "200", content = @Content(mediaType = "application/json", schema = @Schema(implementation = ResponseMessage.class)))
     @PostMapping("/v1")
     public ResponseEntity postBrandCoupon(@RequestBody PostBrandCouponRequest request) {
 
@@ -30,9 +27,7 @@ public class BrandCouponController {
 
 
     @Operation(summary= "브랜드 쿠폰 조회", tags = "브랜드 쿠폰")
-    @ApiResponses({
-            @ApiResponse(responseCode = "200", content = @Content(mediaType = "application/json", array = @ArraySchema(schema = @Schema(implementation = getCouponItemAndUseridResponse.class)))),
-    })
+    @ApiResponse(responseCode = "200", content = @Content(mediaType = "application/json", array = @ArraySchema(schema = @Schema(implementation = getCouponItemAndUseridResponse.class))))
     @GetMapping("/v1/{brandid}")
     public void getBrandCoupon(@PathVariable("brandid") String brandid) {
 
@@ -43,9 +38,7 @@ public class BrandCouponController {
 
 
     @Operation(summary= "브랜드 쿠폰 등록 요청 조회", tags = "브랜드 쿠폰")
-    @ApiResponses({
-            @ApiResponse(responseCode = "200", content = @Content(mediaType = "application/json", array = @ArraySchema(schema = @Schema(implementation = GetBrandReqeustCoupnResponse.class)))),
-    })
+    @ApiResponse(responseCode = "200", content = @Content(mediaType = "application/json", array = @ArraySchema(schema = @Schema(implementation = GetBrandReqeustCoupnResponse.class))))
     @GetMapping("/v1")
     public void getBrandRequestCoupon() {
 
