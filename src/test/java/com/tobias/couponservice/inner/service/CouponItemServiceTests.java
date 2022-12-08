@@ -1,8 +1,8 @@
 package com.tobias.couponservice.inner.service;
 
-import com.tobias.couponservice.inner.domain.entity.Coupon;
-import com.tobias.couponservice.inner.repository.CouponItemRepository;
-import com.tobias.couponservice.inner.repository.CouponRepository;
+import com.tobias.couponservice.inner.domain.Coupon;
+import com.tobias.couponservice.outer.repository.CouponItemRepository;
+import com.tobias.couponservice.outer.repository.CouponRepository;
 import com.tobias.couponservice.outer.dto.user.MyCouponDto;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeAll;

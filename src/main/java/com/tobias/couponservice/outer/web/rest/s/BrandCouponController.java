@@ -1,10 +1,5 @@
-package com.tobias.couponservice.outer.web.rest;
+package com.tobias.couponservice.outer.web.rest.s;
 
-import com.tobias.couponservice.outer.vo.ResponseMessage;
-import com.tobias.couponservice.outer.vo.coupon.GetBrandCouponResponse;
-import com.tobias.couponservice.outer.vo.coupon.GetBrandReqeustCoupnResponse;
-import com.tobias.couponservice.outer.vo.coupon.PostBrandCouponRequest;
-import com.tobias.couponservice.outer.vo.couponItem.getCouponItemAndUseridResponse;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.ArraySchema;
 import io.swagger.v3.oas.annotations.media.Content;

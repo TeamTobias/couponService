@@ -1,4 +1,4 @@
-package com.tobias.couponservice.outer.web.rest;
+package com.tobias.couponservice.outer.web.rest.s;
 
 import com.tobias.couponservice.outer.vo.ResponseMessage;
 import com.tobias.couponservice.outer.vo.couponItem.getCouponItemAndUseridResponse;

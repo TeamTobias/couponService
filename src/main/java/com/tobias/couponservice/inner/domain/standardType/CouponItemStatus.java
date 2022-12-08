@@ -1,4 +1,4 @@
-package com.tobias.couponservice.inner.domain.entity.standardType;
+package com.tobias.couponservice.inner.domain.standardType;
 
 public enum CouponItemStatus {
     ENABLED, // 사용 가능

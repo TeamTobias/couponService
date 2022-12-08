@@ -1,9 +1,10 @@
-package com.tobias.couponservice.inner.domain.entity;
+package com.tobias.couponservice.inner.domain;
 
-import com.tobias.couponservice.inner.domain.entity.standardType.PermitStatus;
-import com.tobias.couponservice.inner.domain.entity.standardType.PublisherType;
-import com.tobias.couponservice.inner.domain.entity.standardType.Type;
+import com.tobias.couponservice.inner.domain.standardType.PermitStatus;
+import com.tobias.couponservice.inner.domain.standardType.PublisherType;
+import com.tobias.couponservice.inner.domain.standardType.Type;
 import com.tobias.couponservice.inner.domain.vo.ConditionVo;
+import com.tobias.couponservice.inner.domain.vo.PublisherVo;
 import lombok.*;
 
 import javax.persistence.*;
@@ -43,7 +44,7 @@ public class Coupon implements Serializable {
 
 
 
-    public String getBrandid() {
+    public long getBrandid() {
         return this.publisherVo.getBrandid();
     }
 

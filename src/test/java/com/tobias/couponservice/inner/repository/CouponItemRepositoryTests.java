@@ -1,12 +1,14 @@
 package com.tobias.couponservice.inner.repository;
 
-import com.tobias.couponservice.inner.domain.entity.CouponItem;
-import com.tobias.couponservice.inner.domain.entity.Coupon;
-import com.tobias.couponservice.inner.domain.entity.PublisherVo;
-import com.tobias.couponservice.inner.domain.entity.standardType.PermitStatus;
-import com.tobias.couponservice.inner.domain.entity.standardType.PublisherType;
-import com.tobias.couponservice.inner.domain.entity.standardType.Type;
+import com.tobias.couponservice.inner.domain.CouponItem;
+import com.tobias.couponservice.inner.domain.Coupon;
+import com.tobias.couponservice.inner.domain.vo.PublisherVo;
+import com.tobias.couponservice.inner.domain.standardType.PermitStatus;
+import com.tobias.couponservice.inner.domain.standardType.PublisherType;
+import com.tobias.couponservice.inner.domain.standardType.Type;
 import com.tobias.couponservice.inner.domain.vo.ConditionVo;
+import com.tobias.couponservice.outer.repository.CouponItemRepository;
+import com.tobias.couponservice.outer.repository.CouponRepository;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

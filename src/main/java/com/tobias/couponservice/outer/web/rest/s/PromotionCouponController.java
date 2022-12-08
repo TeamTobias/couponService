@@ -1,4 +1,4 @@
-package com.tobias.couponservice.outer.web.rest;
+package com.tobias.couponservice.outer.web.rest.s;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.ArraySchema;

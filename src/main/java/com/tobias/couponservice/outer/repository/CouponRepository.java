@@ -1,7 +1,7 @@
-package com.tobias.couponservice.inner.repository;
+package com.tobias.couponservice.outer.repository;
 
-import com.tobias.couponservice.inner.domain.entity.Coupon;
-import com.tobias.couponservice.inner.domain.entity.standardType.PublisherType;
+import com.tobias.couponservice.inner.domain.Coupon;
+import com.tobias.couponservice.inner.domain.standardType.PublisherType;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

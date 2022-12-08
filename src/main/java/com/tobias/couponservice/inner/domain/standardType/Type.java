@@ -1,4 +1,4 @@
-package com.tobias.couponservice.inner.domain.entity.standardType;
+package com.tobias.couponservice.inner.domain.standardType;
 
 public enum Type {
     PERCENTAG("백분율"), // 백분율 할인

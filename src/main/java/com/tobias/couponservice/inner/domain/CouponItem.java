@@ -1,6 +1,6 @@
-package com.tobias.couponservice.inner.domain.entity;
+package com.tobias.couponservice.inner.domain;
 
-import com.tobias.couponservice.inner.domain.entity.standardType.CouponItemStatus;
+import com.tobias.couponservice.inner.domain.standardType.CouponItemStatus;
 import com.tobias.couponservice.outer.dto.user.MyCouponDto;
 import lombok.*;
 

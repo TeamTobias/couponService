@@ -1,9 +1,9 @@
 package com.tobias.couponservice.inner.service.Impl;
 
-import com.tobias.couponservice.inner.domain.entity.Coupon;
-import com.tobias.couponservice.inner.domain.entity.standardType.PermitStatus;
-import com.tobias.couponservice.inner.domain.entity.standardType.PublisherType;
-import com.tobias.couponservice.inner.repository.CouponRepository;
+import com.tobias.couponservice.inner.domain.Coupon;
+import com.tobias.couponservice.inner.domain.standardType.PermitStatus;
+import com.tobias.couponservice.inner.domain.standardType.PublisherType;
+import com.tobias.couponservice.outer.repository.CouponRepository;
 import com.tobias.couponservice.inner.service.CouponService;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
