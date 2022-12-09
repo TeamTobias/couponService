@@ -1,8 +1,9 @@
-#spring:
-#  cloud:
-#    config:
-#      uri: http://localhost:8888
-#      name: couponService
-#  profiles:
-#    active: native
-#
+spring:
+  cloud:
+    config:
+      uri: http://localhost:8888
+      name: couponService
+
+  profiles:
+    active: native
+
