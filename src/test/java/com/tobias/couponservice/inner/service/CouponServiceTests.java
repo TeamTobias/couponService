@@ -6,6 +6,7 @@ import com.tobias.couponservice.inner.domain.standardType.PermitStatus;
 import com.tobias.couponservice.inner.domain.standardType.PublisherType;
 import com.tobias.couponservice.inner.domain.standardType.Type;
 import com.tobias.couponservice.inner.domain.vo.ConditionVo;
+import com.tobias.couponservice.outer.dto.FindCouponRes;
 import com.tobias.couponservice.outer.repository.CouponRepository;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -144,7 +145,7 @@ class CouponServiceTests {
         couponRepository.save(coupon3);
 
         // if each (Coupon Brandid == brandCouponService.findBrandCoupon(“1”)) && (PublisherType.BRAND == brandCouponService.findBrandCoupon(“1”)) true;
-        for (Coupon coupon1 : couponService.findBrandCoupon(Long.parseLong("1"))) {
+        for (FindCouponRes coupon1 : couponService.findBrandCoupon(Long.parseLong("1"))) {
             if (coupon1.getBrandid() == 1L && coupon1.getPublisherType().equals(PublisherType.BRAND)) {
                 Assertions.assertTrue(true);
             } else {
