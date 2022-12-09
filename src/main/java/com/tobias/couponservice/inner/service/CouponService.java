@@ -1,32 +1,22 @@
 package com.tobias.couponservice.inner.service;
 
-import com.tobias.couponservice.inner.domain.entity.Coupon;
-import com.tobias.couponservice.outer.dto.brand.RegisterdRequestDto;
+import com.tobias.couponservice.outer.dto.BrandCouponRequest;
+import com.tobias.couponservice.outer.dto.*;
 
 import java.util.List;
 
 public interface CouponService {
 
-    /*프로모션 쿠폰 등록*/
-    void registerPromotionCoupon(String managerId);
+    void brandCouponRequest(BrandCouponRequest brandCouponRequest);
 
-    /*프로모션 쿠폰 조회*/
-    List<Coupon> findPromotionCoupon();
+    List<FindCouponRes> findBrandCoupon(long brandId);
 
-    /*프로모션 쿠폰 만료*/
+    void promotionCouponRequest(PromotionCouponRequest promotionCouponRequest);
 
+    void brandCouponPermit(long couponid, long managerid);
 
+    List<BrandCouponRequestRes> findBrandCouponRequest();
 
-
-
-
-    /*판매자 쿠폰 등록 요청*/
-    void registerBrandCouponRequest(RegisterdRequestDto registerdRequestDto);
-
-    /*판매자 쿠폰 조회*/
-    List<Coupon> findBrandCoupon(String brandId);
-
-    /*판매자 쿠폰 만료*/
-
+    List<FindCouponRes> findCoupon();
 
 }

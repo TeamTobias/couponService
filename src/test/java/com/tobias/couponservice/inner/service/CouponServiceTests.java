@@ -1,18 +1,19 @@
 package com.tobias.couponservice.inner.service;
 
-import com.tobias.couponservice.inner.domain.entity.Coupon;
-import com.tobias.couponservice.inner.domain.entity.standardType.PermitStatus;
-import com.tobias.couponservice.inner.domain.entity.standardType.PublisherType;
-import com.tobias.couponservice.inner.domain.entity.standardType.Type;
-import com.tobias.couponservice.inner.repository.CouponRepository;
-import com.tobias.couponservice.outer.dto.brand.RegisterdRequestDto;
+import com.tobias.couponservice.inner.domain.Coupon;
+import com.tobias.couponservice.inner.domain.vo.PublisherVo;
+import com.tobias.couponservice.inner.domain.standardType.PermitStatus;
+import com.tobias.couponservice.inner.domain.standardType.PublisherType;
+import com.tobias.couponservice.inner.domain.standardType.Type;
+import com.tobias.couponservice.inner.domain.vo.ConditionVo;
+import com.tobias.couponservice.outer.dto.FindCouponRes;
+import com.tobias.couponservice.outer.repository.CouponRepository;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.annotation.Description;
 import org.springframework.context.annotation.Profile;
-import org.springframework.test.annotation.Commit;
 
 import java.util.Date;
 
@@ -55,6 +56,26 @@ class CouponServiceTests {
 //    }
 
 
+    private static Coupon createCoupon() {
+
+        return Coupon.builder()
+                .content("쿠폰 내용")
+                .type(Type.PERCENTAG)
+                .discountAmount(1000)
+                .publisherVo(PublisherVo.builder()
+                        .brandid(Long.parseLong("1234"))
+                        .publisherType(PublisherType.BRAND)
+                        .permitStatus(PermitStatus.PERMIT)
+                        .managerid(Long.parseLong("1234"))
+                        .build())
+                .conditionVo(ConditionVo.builder()
+                        .leastAmount(5000)
+                        .openDate(new Date())
+                        .endDate(new Date())
+                        .build())
+                .build();
+
+    }
 
     /*판매자 쿠폰 조회*/
     @Test
@@ -62,15 +83,20 @@ class CouponServiceTests {
     void findBrandCoupon() {
         // 쿠폰 엔티티 builder (brandid = “1”, PublisherType = Brand)
         Coupon coupon = Coupon.builder()
-                .brandid("1")
-                .publisherType(PublisherType.valueOf("BRAND"))
-                .openDate(new Date())
-                .endDate(new Date())
                 .content("쿠폰 내용")
-                .type(Type.valueOf("PERCENTAG"))
+                .type(Type.PERCENTAG)
                 .discountAmount(1000)
-                .leastAmount(5000)
-                .permitStatus(PermitStatus.REQUESTED)
+                .publisherVo(PublisherVo.builder()
+                        .brandid(Long.parseLong("1"))
+                        .publisherType(PublisherType.BRAND)
+                        .permitStatus(PermitStatus.PERMIT)
+                        .managerid(Long.parseLong("1234"))
+                        .build())
+                .conditionVo(ConditionVo.builder()
+                        .leastAmount(5000)
+                        .openDate(new Date())
+                        .endDate(new Date())
+                        .build())
                 .build();
 
         // couponRepository Save
@@ -78,15 +104,20 @@ class CouponServiceTests {
 
         // 쿠폰 엔티티 builder  (brandid = “2”, PublisherType = Brand)
         Coupon coupon2 = Coupon.builder()
-                .brandid("2")
-                .publisherType(PublisherType.valueOf("BRAND"))
-                .openDate(new Date())
-                .endDate(new Date())
                 .content("쿠폰 내용")
-                .type(Type.valueOf("PERCENTAG"))
+                .type(Type.PERCENTAG)
                 .discountAmount(1000)
-                .leastAmount(5000)
-                .permitStatus(PermitStatus.REQUESTED)
+                .publisherVo(PublisherVo.builder()
+                        .brandid(Long.parseLong("2"))
+                        .publisherType(PublisherType.BRAND)
+                        .permitStatus(PermitStatus.PERMIT)
+                        .managerid(Long.parseLong("1234"))
+                        .build())
+                .conditionVo(ConditionVo.builder()
+                        .leastAmount(5000)
+                        .openDate(new Date())
+                        .endDate(new Date())
+                        .build())
                 .build();
 
         // couponRepository Save
@@ -94,23 +125,28 @@ class CouponServiceTests {
 
         // 쿠폰 엔티티 builder  (brandid = “3”, PublisherType = MANAGER)
         Coupon coupon3 = Coupon.builder()
-                .brandid("3")
-                .publisherType(PublisherType.valueOf("MANAGER"))
-                .openDate(new Date())
-                .endDate(new Date())
                 .content("쿠폰 내용")
-                .type(Type.valueOf("PERCENTAG"))
+                .type(Type.PERCENTAG)
                 .discountAmount(1000)
-                .leastAmount(5000)
-                .permitStatus(PermitStatus.REQUESTED)
+                .publisherVo(PublisherVo.builder()
+                        .brandid(Long.parseLong("3"))
+                        .publisherType(PublisherType.BRAND)
+                        .permitStatus(PermitStatus.PERMIT)
+                        .managerid(Long.parseLong("1234"))
+                        .build())
+                .conditionVo(ConditionVo.builder()
+                        .leastAmount(5000)
+                        .openDate(new Date())
+                        .endDate(new Date())
+                        .build())
                 .build();
 
         //couponRepository Save
         couponRepository.save(coupon3);
 
         // if each (Coupon Brandid == brandCouponService.findBrandCoupon(“1”)) && (PublisherType.BRAND == brandCouponService.findBrandCoupon(“1”)) true;
-        for (Coupon coupon1 : couponService.findBrandCoupon("1")) {
-            if (coupon1.getBrandid().equals("1") && coupon1.getPublisherType().equals(PublisherType.BRAND)) {
+        for (FindCouponRes coupon1 : couponService.findBrandCoupon(Long.parseLong("1"))) {
+            if (coupon1.getBrandid() == 1L && coupon1.getPublisherType().equals(PublisherType.BRAND)) {
                 Assertions.assertTrue(true);
             } else {
                 Assertions.fail();

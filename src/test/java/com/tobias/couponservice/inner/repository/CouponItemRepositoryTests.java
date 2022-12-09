@@ -1,10 +1,14 @@
 package com.tobias.couponservice.inner.repository;
 
-import com.tobias.couponservice.inner.domain.entity.CouponItem;
-import com.tobias.couponservice.inner.domain.entity.Coupon;
-import com.tobias.couponservice.inner.domain.entity.standardType.PermitStatus;
-import com.tobias.couponservice.inner.domain.entity.standardType.PublisherType;
-import com.tobias.couponservice.inner.domain.entity.standardType.Type;
+import com.tobias.couponservice.inner.domain.CouponItem;
+import com.tobias.couponservice.inner.domain.Coupon;
+import com.tobias.couponservice.inner.domain.vo.PublisherVo;
+import com.tobias.couponservice.inner.domain.standardType.PermitStatus;
+import com.tobias.couponservice.inner.domain.standardType.PublisherType;
+import com.tobias.couponservice.inner.domain.standardType.Type;
+import com.tobias.couponservice.inner.domain.vo.ConditionVo;
+import com.tobias.couponservice.outer.repository.CouponItemRepository;
+import com.tobias.couponservice.outer.repository.CouponRepository;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,7 +30,7 @@ public class CouponItemRepositoryTests {
     // set profile test
     @BeforeAll
     public static void setProfile() {
-        System.setProperty("spring.profiles.active", "test");
+        System.setProperty("spring.profiles.active", "local");
     }
 
 
@@ -36,13 +40,22 @@ public class CouponItemRepositoryTests {
     void saveCouponItem() {
 
         Coupon coupon = Coupon.builder()
-                .publisherType(PublisherType.BRAND)
-                .permitStatus(PermitStatus.PERMIT)
-                .content("content")
+                .content("쿠폰 내용")
                 .type(Type.PERCENTAG)
-                .leastAmount(1000)
-                .openDate(new Date())
-                .endDate(new Date())
+                .discountAmount(1000)
+                .publisherVo(PublisherVo.builder()
+                        .brandid(2L)
+                        .publisherType(PublisherType.BRAND)
+                        .permitStatus(PermitStatus.PERMIT)
+                        .managerid(1L)
+                        .build())
+                .conditionVo(ConditionVo.builder()
+                        .leastAmount(5000)
+                        // 2022-10-12
+                        .openDate(new Date(1634032000000L))
+                        // 2022-12-24
+                        .endDate(new Date(1640345600000L))
+                        .build())
                 .build();
 
         couponRepository.save(coupon);
