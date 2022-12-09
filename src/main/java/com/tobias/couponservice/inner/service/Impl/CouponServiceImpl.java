@@ -70,7 +70,8 @@ public class CouponServiceImpl implements CouponService {
 
     @Override
     public List<FindCouponRes> findCoupon() {
-        return null;
+        List<Coupon> coupons = couponRepository.findEnableCoupon();
+        return coupons.stream().map(FindCouponRes::new).collect(Collectors.toList());
     }
 
 
