@@ -1,6 +1,7 @@
 package com.tobias.couponservice.outer.dto;
 
 
+import com.tobias.couponservice.inner.domain.Coupon;
 import com.tobias.couponservice.inner.domain.CouponItem;
 import com.tobias.couponservice.inner.domain.standardType.CouponItemStatus;
 import com.tobias.couponservice.inner.domain.standardType.Type;

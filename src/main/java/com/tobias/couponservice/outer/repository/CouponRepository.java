@@ -14,9 +14,10 @@ public interface CouponRepository extends JpaRepository<Coupon, Long> {
 
     Iterable<Coupon> findByPublisherVo_BrandidAndPublisherVo_PublisherType(long brandId, PublisherType publisherType);
 
-    Iterable<Coupon> findByPublisherVo_PermitStatus(PermitStatus requested);
+    List<Coupon> findByPublisherVo_PermitStatus(PermitStatus requested);
 
 
     @Query("select coupon from Coupon coupon where coupon.publisherVo.permitStatus = 'PERMIT' and coupon.conditionVo.openDate <= current_date and coupon.conditionVo.endDate >= current_date")
     Iterable<Coupon> findEnableCoupon();
+
 }

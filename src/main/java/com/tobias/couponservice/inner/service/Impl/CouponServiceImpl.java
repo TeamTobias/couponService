@@ -3,10 +3,7 @@ package com.tobias.couponservice.inner.service.Impl;
 import com.tobias.couponservice.inner.domain.Coupon;
 import com.tobias.couponservice.inner.domain.standardType.PermitStatus;
 import com.tobias.couponservice.inner.domain.standardType.PublisherType;
-import com.tobias.couponservice.outer.dto.BrandCouponRequest;
-import com.tobias.couponservice.outer.dto.BrandCouponRequestRes;
-import com.tobias.couponservice.outer.dto.FindCouponRes;
-import com.tobias.couponservice.outer.dto.PromotionCouponRequest;
+import com.tobias.couponservice.outer.dto.*;
 import com.tobias.couponservice.outer.repository.CouponRepository;
 import com.tobias.couponservice.inner.service.CouponService;
 import lombok.RequiredArgsConstructor;
@@ -16,6 +13,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -40,7 +38,7 @@ public class CouponServiceImpl implements CouponService {
 
         List<FindCouponRes> findCouponResList = null;
         for (Coupon coupon : coupons) findCouponResList.add(modelMapper.map(coupon, FindCouponRes.class));
-        
+
         return findCouponResList;
     }
 
@@ -66,8 +64,8 @@ public class CouponServiceImpl implements CouponService {
 
     @Override
     public List<BrandCouponRequestRes> findBrandCouponRequest() {
-        // TODO: 2022-12-08
-        return null;
+        List<Coupon> coupons = couponRepository.findByPublisherVo_PermitStatus(PermitStatus.REQUESTED);
+        return coupons.stream().map(BrandCouponRequestRes::new).collect(Collectors.toList());
     }
 
     @Override
