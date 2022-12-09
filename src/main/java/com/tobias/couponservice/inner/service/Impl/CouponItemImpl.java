@@ -3,6 +3,7 @@ package com.tobias.couponservice.inner.service.Impl;
 import com.tobias.couponservice.inner.domain.Coupon;
 import com.tobias.couponservice.inner.domain.CouponItem;
 import com.tobias.couponservice.inner.domain.standardType.CouponItemStatus;
+import com.tobias.couponservice.outer.dto.FindMyCouponDetailResponse;
 import com.tobias.couponservice.outer.dto.SaveMyCouponRequest;
 import com.tobias.couponservice.outer.repository.CouponItemRepository;
 import com.tobias.couponservice.inner.service.CouponItemService;
@@ -11,6 +12,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 @Slf4j
@@ -31,8 +33,9 @@ public class CouponItemImpl implements CouponItemService {
     }
 
     @Override
-    public List<CouponItem> findMyCoupon(String userid) {
-        return couponItemRepository.findByUseridAndStatus(userid, CouponItemStatus.ENABLED);
+    public List<FindMyCouponDetailResponse> findMyCoupon(String userid) {
+        List<CouponItem> couponItems = couponItemRepository.findByUseridAndStatus(userid, CouponItemStatus.ENABLED);
+        return couponItems.stream().map(FindMyCouponDetailResponse::new).collect(Collectors.toList());
     }
 
 
@@ -41,6 +44,6 @@ public class CouponItemImpl implements CouponItemService {
         CouponItem couponItem = couponItemRepository.findByUseridAndCoupon(userid, Coupon.builder().id(couponItemId).build());
         couponItem.useMyCoupon();
         couponItemRepository.save(couponItem);
-
     }
+
 }
