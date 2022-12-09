@@ -1,6 +1,5 @@
 package com.tobias.couponservice.inner.service;
 
-import com.tobias.couponservice.inner.domain.Coupon;
 import com.tobias.couponservice.outer.dto.BrandCouponRequest;
 import com.tobias.couponservice.outer.dto.*;
 

@@ -5,10 +5,7 @@ import com.tobias.couponservice.inner.domain.standardType.PublisherType;
 import com.tobias.couponservice.inner.domain.standardType.Type;
 import com.tobias.couponservice.inner.domain.vo.ConditionVo;
 import com.tobias.couponservice.inner.domain.vo.PublisherVo;
-import com.tobias.couponservice.outer.dto.PromotionCouponRequest;
 import lombok.*;
-import org.modelmapper.ModelMapper;
-import org.modelmapper.convention.MatchingStrategies;
 
 import javax.persistence.*;
 import java.io.Serializable;

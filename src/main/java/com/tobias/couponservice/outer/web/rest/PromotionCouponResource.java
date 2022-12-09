@@ -1,11 +1,8 @@
 package com.tobias.couponservice.outer.web.rest;
 
-
 import com.tobias.couponservice.inner.service.CouponService;
-import com.tobias.couponservice.outer.dto.BrandCouponRequestRes;
 import com.tobias.couponservice.outer.dto.PromotionCouponRequest;
 import com.tobias.couponservice.outer.dto.ResponseMessage;
-import io.swagger.v3.oas.annotations.media.ArraySchema;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
@@ -13,7 +10,6 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
 
 @RestController
 @RequestMapping("/promotionCoupon")

@@ -1,6 +1,5 @@
 package com.tobias.couponservice.inner.service;
 
-import com.tobias.couponservice.inner.domain.CouponItem;
 import com.tobias.couponservice.outer.dto.FindMyCouponDetailResponse;
 import com.tobias.couponservice.outer.dto.SaveMyCouponRequest;
 
