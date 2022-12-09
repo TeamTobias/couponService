@@ -25,23 +25,22 @@ public class BrandCouponResource {
 
     @ApiResponse(responseCode = "200", content = @Content(mediaType = "application/json", schema = @Schema(implementation = ResponseMessage.class)))
     @PostMapping("/v1")
-    public ResponseEntity brandCouponRequest(@RequestBody BrandCouponRequest brandCouponRequest) {
-        return null;
+    public ResponseEntity<ResponseMessage> brandCouponRequest(@RequestBody BrandCouponRequest brandCouponRequest) {
+        couponService.brandCouponRequest(brandCouponRequest);
+        return ResponseEntity.ok(new ResponseMessage());
     }
 
 
     @ApiResponse(responseCode = "200", content = @Content(mediaType = "application/json", array = @ArraySchema(schema = @Schema(implementation = FindCouponRes.class))))
     @GetMapping("/v1/{brandid}")
     public ResponseEntity<List<FindCouponRes>> findBrandCoupon(@PathVariable long brandid) {
-        couponService.findBrandCoupon(brandid);
-        return null;
+        return ResponseEntity.ok(couponService.findBrandCoupon(brandid));
     }
 
 
     @ApiResponse(responseCode = "200", content = @Content(mediaType = "application/json", array = @ArraySchema(schema = @Schema(implementation = BrandCouponRequestRes.class))))
     @GetMapping("/v1")
     public ResponseEntity<List<BrandCouponRequestRes>> findBrandCouponRequest() {
-        List<BrandCouponRequestRes> brandCouponRequestReses = couponService.findBrandCouponRequest();
-        return ResponseEntity.ok(brandCouponRequestReses);
+        return ResponseEntity.ok(couponService.findBrandCouponRequest());
     }
 }
