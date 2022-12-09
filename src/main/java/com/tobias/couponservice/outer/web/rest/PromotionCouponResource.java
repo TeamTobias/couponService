@@ -24,22 +24,17 @@ public class PromotionCouponResource {
 
 	@ApiResponse(responseCode = "200", content = @Content(mediaType = "application/json", schema = @Schema(implementation = ResponseMessage.class)))
 	@PostMapping("/v1/{managerid}")
-	public ResponseEntity promotionCouponRequest(@RequestBody PromotionCouponRequest promotionCouponRequest){
+	public ResponseEntity<ResponseMessage> promotionCouponRequest(@RequestBody PromotionCouponRequest promotionCouponRequest){
 		couponService.promotionCouponRequest(promotionCouponRequest);
-		return ResponseEntity.ok(new ResponseMessage("success"));
+		return ResponseEntity.ok(new ResponseMessage());
 	}
 
 	@ApiResponse(responseCode = "200", content = @Content(mediaType = "application/json", schema = @Schema(implementation = ResponseMessage.class)))
 	@PostMapping("/v1/{managerid}/{couponid}")
-	public ResponseEntity brandCouponPermit(long couponid, long managerid){
+	public ResponseEntity<ResponseMessage> brandCouponPermit(long couponid, long managerid){
 		couponService.brandCouponPermit(couponid, managerid);
-		return ResponseEntity.ok(new ResponseMessage("success"));
+		return ResponseEntity.ok(new ResponseMessage());
 	}
 
-	@ApiResponse(responseCode = "200", content = @Content(mediaType = "application/json", array = @ArraySchema(schema = @Schema(implementation = BrandCouponRequestRes.class))))
-	public ResponseEntity<List<BrandCouponRequestRes>> findBrandCouponRequest(){
-		List<BrandCouponRequestRes> brandCouponRequestReses = couponService.findBrandCouponRequest();
-		return ResponseEntity.ok(brandCouponRequestReses);
-	}
 
 }
