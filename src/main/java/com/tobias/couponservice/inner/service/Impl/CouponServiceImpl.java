@@ -32,14 +32,8 @@ public class CouponServiceImpl implements CouponService {
 
     @Override
     public List<FindCouponRes> findBrandCoupon(long brandId) {
-        Iterable<Coupon> coupons= couponRepository.findByPublisherVo_BrandidAndPublisherVo_PublisherType(brandId, PublisherType.BRAND);
-        ModelMapper modelMapper = new ModelMapper();
-        modelMapper.getConfiguration().setMatchingStrategy(MatchingStrategies.LOOSE);
-
-        List<FindCouponRes> findCouponResList = null;
-        for (Coupon coupon : coupons) findCouponResList.add(modelMapper.map(coupon, FindCouponRes.class));
-
-        return findCouponResList;
+        List<Coupon> coupons= couponRepository.findByPublisherVo_BrandidAndPublisherVo_PublisherType(brandId, PublisherType.BRAND);
+        return coupons.stream().map(FindCouponRes::new).collect(Collectors.toList());
     }
 
 

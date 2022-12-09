@@ -12,7 +12,7 @@ import java.util.List;
 public interface CouponRepository extends JpaRepository<Coupon, Long> {
 
 
-    Iterable<Coupon> findByPublisherVo_BrandidAndPublisherVo_PublisherType(long brandId, PublisherType publisherType);
+    List<Coupon> findByPublisherVo_BrandidAndPublisherVo_PublisherType(long brandId, PublisherType publisherType);
 
     List<Coupon> findByPublisherVo_PermitStatus(PermitStatus requested);
 
