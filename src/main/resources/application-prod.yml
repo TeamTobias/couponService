@@ -8,11 +8,11 @@ eureka:
     register-with-eureka: true
     fetch-registry: true
     service-url:
-      defaultZone: http://tobiasdev.ml:8761/eureka/
+      defaultZone: http://localhost:8761/eureka/
 
 spring:
   application:
-    name: couponService
+    name: coupon-service
   datasource:
     driver-class-name: org.mariadb.jdbc.Driver
     url: jdbc:mariadb://tobiasdev.ml:3306/bootex

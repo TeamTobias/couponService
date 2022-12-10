@@ -7,6 +7,7 @@ import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import lombok.RequiredArgsConstructor;
+import org.springframework.core.env.Environment;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,6 +21,13 @@ import java.util.List;
 public class CouponResource {
 
 	private final CouponService couponService;
+
+	private final Environment environment;
+
+	@GetMapping("/welcome")
+	public ResponseEntity<String> welcome() {
+		return ResponseEntity.ok(environment.getProperty("test.message"));
+	}
 
 	@ApiResponse(responseCode = "200", content = @Content(mediaType = "application/json", array = @ArraySchema(schema = @Schema(implementation = FindCouponRes.class))))
 	@GetMapping("/v1")
