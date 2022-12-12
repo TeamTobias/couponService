@@ -26,7 +26,7 @@ public class PromotionCouponResource {
 	}
 
 	@ApiResponse(responseCode = "200", content = @Content(mediaType = "application/json", schema = @Schema(implementation = ResponseMessage.class)))
-	@PostMapping("/v1/{managerid}/{couponid}")
+	@PutMapping("/v1/{managerid}/{couponid}")
 	public ResponseEntity<ResponseMessage> brandCouponPermit(long couponid, long managerid){
 		couponService.brandCouponPermit(couponid, managerid);
 		return ResponseEntity.ok(new ResponseMessage());
