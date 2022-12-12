@@ -39,5 +39,5 @@ springdoc:
     - /brandCoupon/v1/**
     - /coupon/v1/**
 
-greeting:
+test:
   message: this is local application.yml

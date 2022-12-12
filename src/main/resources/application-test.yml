@@ -35,5 +35,5 @@ springdoc:
     - /promotionCoupon/v1/**
     - /brandCoupon/v1/**
 
-greeting:
+test:
   message: this is test application.yml
