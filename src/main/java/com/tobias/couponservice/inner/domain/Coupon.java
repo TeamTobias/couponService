@@ -5,6 +5,7 @@ import com.tobias.couponservice.inner.domain.standardType.PublisherType;
 import com.tobias.couponservice.inner.domain.standardType.Type;
 import com.tobias.couponservice.inner.domain.vo.ConditionVo;
 import com.tobias.couponservice.inner.domain.vo.PublisherVo;
+import com.tobias.couponservice.outer.dto.PromotionCouponRequest;
 import lombok.*;
 
 import javax.persistence.*;
@@ -38,6 +39,20 @@ public class Coupon implements Serializable {
     @Embedded
     private ConditionVo conditionVo;
 
+    public Coupon(PromotionCouponRequest promotionCouponRequest) {
+        this.publisherVo = new PublisherVo();
+        this.conditionVo = new ConditionVo();
+
+        this.publisherVo.setManagerid(promotionCouponRequest.getManagerid());
+
+        this.conditionVo.setOpenDate(promotionCouponRequest.getOpenDate());
+        this.conditionVo.setEndDate(promotionCouponRequest.getEndDate());
+        this.content = promotionCouponRequest.getContent();
+        this.type = Type.valueOf(promotionCouponRequest.getType());
+        this.discountAmount = promotionCouponRequest.getDiscountAmount();
+        this.conditionVo.setLeastAmount(promotionCouponRequest.getLeastAmount());
+    }
+
     public void getCoupon(long couponid) {
         this.id = couponid;
     }
@@ -52,8 +67,8 @@ public class Coupon implements Serializable {
         return this.publisherVo.getPublisherType();
     }
 
-    public void setPermitStatus(PermitStatus requested) {
-        this.publisherVo.setPermitStatus(requested);
+    public void setPermitStatus(PermitStatus permitStatus) {
+        this.publisherVo.setPermitStatus(permitStatus);
     }
 
     public void setManagerid(long managerid) {

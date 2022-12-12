@@ -19,7 +19,7 @@ public class PromotionCouponResource {
 	private final CouponService couponService;
 
 	@ApiResponse(responseCode = "200", content = @Content(mediaType = "application/json", schema = @Schema(implementation = ResponseMessage.class)))
-	@PostMapping("/v1/{managerid}")
+	@PostMapping("/v1")
 	public ResponseEntity<ResponseMessage> promotionCouponRequest(@RequestBody PromotionCouponRequest promotionCouponRequest){
 		couponService.promotionCouponRequest(promotionCouponRequest);
 		return ResponseEntity.ok(new ResponseMessage());
