@@ -7,7 +7,7 @@ import java.util.Date;
 @Data
 public class BrandCouponRequest {
 
-	private String brandid;
+	private long brandid;
 	private String brandname;
 	private Date openDate;
 	private Date endDate;
