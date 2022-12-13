@@ -6,8 +6,10 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.CreatedDate;
 
+import javax.persistence.Column;
 import javax.persistence.Embeddable;
 import java.io.Serializable;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 @Data
@@ -29,6 +31,7 @@ public class ConditionVo implements Serializable {
 
     /*쿠폰 생성일*/
     @CreatedDate
-    private Date createdAt;
+    @Column(updatable = false)
+    private LocalDateTime createdAt;
 
 }
