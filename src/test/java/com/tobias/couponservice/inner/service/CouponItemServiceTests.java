@@ -35,22 +35,22 @@ import org.springframework.test.annotation.Commit;
 @SpringBootTest
 public class CouponItemServiceTests {
 
-    @Autowired
-    private CouponItemService couponItemService;
-
-    @Autowired
-    private CouponRepository couponRepository;
-
-    @Autowired
-    private CouponItemRepository couponItemRepository;
-
-    // set profile test
-    @BeforeAll
-    static void beforeAll() {
-
-        System.setProperty("spring.profiles.active", "local");
-
-    }
+//    @Autowired
+//    private CouponItemService couponItemService;
+//
+//    @Autowired
+//    private CouponRepository couponRepository;
+//
+//    @Autowired
+//    private CouponItemRepository couponItemRepository;
+//
+//    // set profile test
+//    @BeforeAll
+//    static void beforeAll() {
+//
+//        System.setProperty("spring.profiles.active", "local");
+//
+//    }
 
     //
 //    @BeforeEach
@@ -64,11 +64,11 @@ public class CouponItemServiceTests {
 //    }
 //
 //
-    /*내 쿠폰 등록*/
-    @Description("내 쿠폰 등록")
-    @Commit
-    @Test
-    void saveMyCoupon() {
+//    /*내 쿠폰 등록*/
+//    @Description("내 쿠폰 등록")
+//    @Commit
+//    @Test
+//    void saveMyCoupon() {
 //        Coupon coupon = Coupon.builder().id(1L).build();
 //        couponRepository.save(coupon);
 //
@@ -83,8 +83,8 @@ public class CouponItemServiceTests {
 //                .userid("1")
 //                .couponid("1")
 //                .build());
-
-    }
+//
+//    }
 
 //
 //    /*내 쿠폰 조회*/

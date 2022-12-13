@@ -39,10 +39,7 @@ springdoc:
   default-consumes-media-type: application/json
   default-produces-media-type: application/json
   paths-to-match:
-    - /myCoupon/v1/**
-    - /promotionCoupon/v1/**
-    - /brandCoupon/v1/**
-    - /coupon/v1/**
+    - /**
       
 test:
   message: this is dev application.yml
