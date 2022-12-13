@@ -14,7 +14,7 @@ public interface CouponItemService {
     List<FindMyCouponDetailResponse> findMyCoupon(String userid);
 
     /*내 쿠폰 사용*/
-    void useMyCoupon(String userid, Long couponItemId);
+    void useMyCoupon(String userid, long couponItemId);
 
 
 

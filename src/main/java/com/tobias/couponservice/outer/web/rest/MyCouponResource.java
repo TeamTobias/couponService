@@ -13,6 +13,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.net.http.HttpResponse;
 import java.util.List;
 
 @RestController
@@ -26,7 +27,7 @@ public class MyCouponResource {
 
 	@Operation(summary = "내 쿠폰 등록")
 	@ApiResponse(responseCode = "200", content = @Content(mediaType = "application/json", schema = @Schema(implementation = ResponseMessage.class)))
-	@PostMapping("/v1/{userid}/{couponid}")
+	@PostMapping("/v1")
 	public ResponseEntity<ResponseMessage> saveMyCoupon(@RequestBody SaveMyCouponRequest saveMyCouponRequest){
 		couponItemService.saveMyCoupon(saveMyCouponRequest);
 		return ResponseEntity.ok(new ResponseMessage());
@@ -44,7 +45,7 @@ public class MyCouponResource {
 	@Operation(summary = "내 쿠폰 사용")
 	@ApiResponse(responseCode = "200", content = @Content(mediaType = "application/json", schema = @Schema(implementation = ResponseMessage.class)))
 	@PutMapping("/v1/{userid}/{couponid}")
-	public ResponseEntity<ResponseMessage> useMyCoupon(@PathVariable String userid, @PathVariable Long couponItemId){
+	public ResponseEntity<ResponseMessage> useMyCoupon(@PathVariable String userid, @PathVariable long couponItemId){
 		couponItemService.useMyCoupon(userid, couponItemId);
 		return ResponseEntity.ok(new ResponseMessage());
 	}

@@ -40,7 +40,7 @@ public class CouponItemImpl implements CouponItemService {
 
 
     @Override
-    public void useMyCoupon(String userid, Long couponItemId) {
+    public void useMyCoupon(String userid, long couponItemId) {
         CouponItem couponItem = couponItemRepository.findByUseridAndCoupon(userid, Coupon.builder().id(couponItemId).build());
         couponItem.useMyCoupon();
         couponItemRepository.save(couponItem);
