@@ -24,7 +24,7 @@ public class CouponResource {
 
 	private final CouponService couponService;
 
-	@Operation(summary = "웰컴 메시지")
+	@Operation(summary = "쿠폰 조회")
 	@ApiResponse(responseCode = "200", content = @Content(mediaType = "application/json", array = @ArraySchema(schema = @Schema(implementation = FindCouponRes.class))))
 	@GetMapping("/v1")
 	public ResponseEntity<List<FindCouponRes>> findCoupon(){

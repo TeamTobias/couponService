@@ -5,6 +5,7 @@ import com.tobias.couponservice.outer.dto.BrandCouponRequest;
 import com.tobias.couponservice.outer.dto.BrandCouponRequestRes;
 import com.tobias.couponservice.outer.dto.FindCouponRes;
 import com.tobias.couponservice.outer.dto.ResponseMessage;
+import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.ArraySchema;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
@@ -24,6 +25,7 @@ public class BrandCouponResource {
     private final CouponService couponService;
 
 
+    @Operation(summary = "판매자 쿠폰 등록 요청")
     @ApiResponse(responseCode = "200", content = @Content(mediaType = "application/json", schema = @Schema(implementation = ResponseMessage.class)))
     @PostMapping("/v1")
     public ResponseEntity<ResponseMessage> brandCouponRequest(@RequestBody BrandCouponRequest brandCouponRequest) {
@@ -32,6 +34,7 @@ public class BrandCouponResource {
     }
 
 
+    @Operation(summary = "판매자 쿠폰 조회")
     @ApiResponse(responseCode = "200", content = @Content(mediaType = "application/json", array = @ArraySchema(schema = @Schema(implementation = FindCouponRes.class))))
     @GetMapping("/v1/{brandid}")
     public ResponseEntity<List<FindCouponRes>> findBrandCoupon(@PathVariable long brandid) {
@@ -39,6 +42,7 @@ public class BrandCouponResource {
     }
 
 
+    @Operation(summary = "판매자 쿠폰 등록 요청 조회")
     @ApiResponse(responseCode = "200", content = @Content(mediaType = "application/json", array = @ArraySchema(schema = @Schema(implementation = BrandCouponRequestRes.class))))
     @GetMapping("/v1")
     public ResponseEntity<List<BrandCouponRequestRes>> findBrandCouponRequest() {
