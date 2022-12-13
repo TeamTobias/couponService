@@ -6,6 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 
 @Data
@@ -22,7 +23,7 @@ public class BrandCouponRequestRes {
 	private int leastAmount;
 	private Date openDate;
 	private Date endDate;
-	private Date createdAt;
+	private LocalDateTime createdAt;
 
 
 	public BrandCouponRequestRes(Coupon coupon) {

@@ -39,9 +39,7 @@ public class CouponServiceImpl implements CouponService {
 
     @Override
     public void promotionCouponRequest(PromotionCouponRequest promotionCouponRequest) {
-        ModelMapper modelMapper = new ModelMapper();
-        Coupon coupon = modelMapper.map(promotionCouponRequest, Coupon.class);
-
+        Coupon coupon = new Coupon(promotionCouponRequest);
         coupon.setPermitStatus(PermitStatus.PERMIT);
         couponRepository.save(coupon);
     }

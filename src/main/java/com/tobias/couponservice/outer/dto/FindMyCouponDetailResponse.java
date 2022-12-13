@@ -1,7 +1,6 @@
 package com.tobias.couponservice.outer.dto;
 
 
-import com.tobias.couponservice.inner.domain.Coupon;
 import com.tobias.couponservice.inner.domain.CouponItem;
 import com.tobias.couponservice.inner.domain.standardType.CouponItemStatus;
 import com.tobias.couponservice.inner.domain.standardType.Type;
@@ -18,7 +17,7 @@ import java.util.Date;
 @AllArgsConstructor
 @Builder
 public class FindMyCouponDetailResponse implements Serializable {
-
+	private Long id;
 	private String content;
 	private Type type;
 	private int discountAmount;
@@ -30,6 +29,7 @@ public class FindMyCouponDetailResponse implements Serializable {
 	private CouponItemStatus status;
 
 	public FindMyCouponDetailResponse(CouponItem couponItem) {
+		this.id = couponItem.getId();
 		this.content = couponItem.getCoupon().getContent();
 		this.type = couponItem.getCoupon().getType();
 		this.discountAmount = couponItem.getCoupon().getDiscountAmount();

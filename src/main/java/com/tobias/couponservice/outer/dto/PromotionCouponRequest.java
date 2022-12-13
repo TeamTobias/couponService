@@ -6,7 +6,7 @@ import java.util.Date;
 
 @Data
 public class PromotionCouponRequest {
-    private String managerid;
+    private long managerid;
     private Date openDate;
     private Date endDate;
     private String content;

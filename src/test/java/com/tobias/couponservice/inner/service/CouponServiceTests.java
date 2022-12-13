@@ -20,12 +20,12 @@ import java.util.Date;
 @Profile("dev")
 @SpringBootTest
 class CouponServiceTests {
-
-    @Autowired
-    private CouponRepository couponRepository;
-
-    @Autowired
-    private CouponService couponService;
+//
+//    @Autowired
+//    private CouponRepository couponRepository;
+//
+//    @Autowired
+//    private CouponService couponService;
 
 
 //    /*판매자 쿠폰 등록 요청*/
@@ -55,106 +55,106 @@ class CouponServiceTests {
 //        }
 //    }
 
-
-    private static Coupon createCoupon() {
-
-        return Coupon.builder()
-                .content("쿠폰 내용")
-                .type(Type.PERCENTAG)
-                .discountAmount(1000)
-                .publisherVo(PublisherVo.builder()
-                        .brandid(Long.parseLong("1234"))
-                        .publisherType(PublisherType.BRAND)
-                        .permitStatus(PermitStatus.PERMIT)
-                        .managerid(Long.parseLong("1234"))
-                        .build())
-                .conditionVo(ConditionVo.builder()
-                        .leastAmount(5000)
-                        .openDate(new Date())
-                        .endDate(new Date())
-                        .build())
-                .build();
-
-    }
-
-    /*판매자 쿠폰 조회*/
-    @Test
-    @Description("판매자 쿠폰 조회")
-    void findBrandCoupon() {
-        // 쿠폰 엔티티 builder (brandid = “1”, PublisherType = Brand)
-        Coupon coupon = Coupon.builder()
-                .content("쿠폰 내용")
-                .type(Type.PERCENTAG)
-                .discountAmount(1000)
-                .publisherVo(PublisherVo.builder()
-                        .brandid(Long.parseLong("1"))
-                        .publisherType(PublisherType.BRAND)
-                        .permitStatus(PermitStatus.PERMIT)
-                        .managerid(Long.parseLong("1234"))
-                        .build())
-                .conditionVo(ConditionVo.builder()
-                        .leastAmount(5000)
-                        .openDate(new Date())
-                        .endDate(new Date())
-                        .build())
-                .build();
-
-        // couponRepository Save
-        couponRepository.save(coupon);
-
-        // 쿠폰 엔티티 builder  (brandid = “2”, PublisherType = Brand)
-        Coupon coupon2 = Coupon.builder()
-                .content("쿠폰 내용")
-                .type(Type.PERCENTAG)
-                .discountAmount(1000)
-                .publisherVo(PublisherVo.builder()
-                        .brandid(Long.parseLong("2"))
-                        .publisherType(PublisherType.BRAND)
-                        .permitStatus(PermitStatus.PERMIT)
-                        .managerid(Long.parseLong("1234"))
-                        .build())
-                .conditionVo(ConditionVo.builder()
-                        .leastAmount(5000)
-                        .openDate(new Date())
-                        .endDate(new Date())
-                        .build())
-                .build();
-
-        // couponRepository Save
-        couponRepository.save(coupon2);
-
-        // 쿠폰 엔티티 builder  (brandid = “3”, PublisherType = MANAGER)
-        Coupon coupon3 = Coupon.builder()
-                .content("쿠폰 내용")
-                .type(Type.PERCENTAG)
-                .discountAmount(1000)
-                .publisherVo(PublisherVo.builder()
-                        .brandid(Long.parseLong("3"))
-                        .publisherType(PublisherType.BRAND)
-                        .permitStatus(PermitStatus.PERMIT)
-                        .managerid(Long.parseLong("1234"))
-                        .build())
-                .conditionVo(ConditionVo.builder()
-                        .leastAmount(5000)
-                        .openDate(new Date())
-                        .endDate(new Date())
-                        .build())
-                .build();
-
-        //couponRepository Save
-        couponRepository.save(coupon3);
-
-        // if each (Coupon Brandid == brandCouponService.findBrandCoupon(“1”)) && (PublisherType.BRAND == brandCouponService.findBrandCoupon(“1”)) true;
-        for (FindCouponRes coupon1 : couponService.findBrandCoupon(Long.parseLong("1"))) {
-            if (coupon1.getBrandid() == 1L && coupon1.getPublisherType().equals(PublisherType.BRAND)) {
-                Assertions.assertTrue(true);
-            } else {
-                Assertions.fail();
-            }
-        }
-
-
-    }
+//
+//    private static Coupon createCoupon() {
+//
+//        return Coupon.builder()
+//                .content("쿠폰 내용")
+//                .type(Type.PERCENTAG)
+//                .discountAmount(1000)
+//                .publisherVo(PublisherVo.builder()
+//                        .brandid(Long.parseLong("1234"))
+//                        .publisherType(PublisherType.BRAND)
+//                        .permitStatus(PermitStatus.PERMIT)
+//                        .managerid(Long.parseLong("1234"))
+//                        .build())
+//                .conditionVo(ConditionVo.builder()
+//                        .leastAmount(5000)
+//                        .openDate(new Date())
+//                        .endDate(new Date())
+//                        .build())
+//                .build();
+//
+//    }
+//
+//    /*판매자 쿠폰 조회*/
+//    @Test
+//    @Description("판매자 쿠폰 조회")
+//    void findBrandCoupon() {
+//        // 쿠폰 엔티티 builder (brandid = “1”, PublisherType = Brand)
+//        Coupon coupon = Coupon.builder()
+//                .content("쿠폰 내용")
+//                .type(Type.PERCENTAG)
+//                .discountAmount(1000)
+//                .publisherVo(PublisherVo.builder()
+//                        .brandid(Long.parseLong("1"))
+//                        .publisherType(PublisherType.BRAND)
+//                        .permitStatus(PermitStatus.PERMIT)
+//                        .managerid(Long.parseLong("1234"))
+//                        .build())
+//                .conditionVo(ConditionVo.builder()
+//                        .leastAmount(5000)
+//                        .openDate(new Date())
+//                        .endDate(new Date())
+//                        .build())
+//                .build();
+//
+//        // couponRepository Save
+//        couponRepository.save(coupon);
+//
+//        // 쿠폰 엔티티 builder  (brandid = “2”, PublisherType = Brand)
+//        Coupon coupon2 = Coupon.builder()
+//                .content("쿠폰 내용")
+//                .type(Type.PERCENTAG)
+//                .discountAmount(1000)
+//                .publisherVo(PublisherVo.builder()
+//                        .brandid(Long.parseLong("2"))
+//                        .publisherType(PublisherType.BRAND)
+//                        .permitStatus(PermitStatus.PERMIT)
+//                        .managerid(Long.parseLong("1234"))
+//                        .build())
+//                .conditionVo(ConditionVo.builder()
+//                        .leastAmount(5000)
+//                        .openDate(new Date())
+//                        .endDate(new Date())
+//                        .build())
+//                .build();
+//
+//        // couponRepository Save
+//        couponRepository.save(coupon2);
+//
+//        // 쿠폰 엔티티 builder  (brandid = “3”, PublisherType = MANAGER)
+//        Coupon coupon3 = Coupon.builder()
+//                .content("쿠폰 내용")
+//                .type(Type.PERCENTAG)
+//                .discountAmount(1000)
+//                .publisherVo(PublisherVo.builder()
+//                        .brandid(Long.parseLong("3"))
+//                        .publisherType(PublisherType.BRAND)
+//                        .permitStatus(PermitStatus.PERMIT)
+//                        .managerid(Long.parseLong("1234"))
+//                        .build())
+//                .conditionVo(ConditionVo.builder()
+//                        .leastAmount(5000)
+//                        .openDate(new Date())
+//                        .endDate(new Date())
+//                        .build())
+//                .build();
+//
+//        //couponRepository Save
+//        couponRepository.save(coupon3);
+//
+//        // if each (Coupon Brandid == brandCouponService.findBrandCoupon(“1”)) && (PublisherType.BRAND == brandCouponService.findBrandCoupon(“1”)) true;
+//        for (FindCouponRes coupon1 : couponService.findBrandCoupon(Long.parseLong("1"))) {
+//            if (coupon1.getBrandid() == 1L && coupon1.getPublisherType().equals(PublisherType.BRAND)) {
+//                Assertions.assertTrue(true);
+//            } else {
+//                Assertions.fail();
+//            }
+//        }
+//
+//
+//    }
 
 
     /*판매자 쿠폰 만료*/
