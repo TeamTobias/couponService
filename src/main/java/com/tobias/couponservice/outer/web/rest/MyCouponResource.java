@@ -44,7 +44,7 @@ public class MyCouponResource {
 
 	@Operation(summary = "내 쿠폰 사용")
 	@ApiResponse(responseCode = "200", content = @Content(mediaType = "application/json", schema = @Schema(implementation = ResponseMessage.class)))
-	@PutMapping("/v1/{userid}/{couponid}")
+	@PutMapping("/v1/{userid}/{couponItemId}")
 	public ResponseEntity<ResponseMessage> useMyCoupon(@PathVariable String userid, @PathVariable long couponItemId){
 		couponItemService.useMyCoupon(userid, couponItemId);
 		return ResponseEntity.ok(new ResponseMessage());
